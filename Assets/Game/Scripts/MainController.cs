@@ -31,23 +31,38 @@ namespace Game
         List<GameObject> screens;
 
         [Header("Level")]
-        [SerializeField]
-        Transform sceneFloor;
+        [SerializeField] Transform sceneFloor;
         [SerializeField] Transform[] sceneBounds;
         [Range(5, 50)] [SerializeField] int sceneSize = 10;
+
+		[Header("Tank")]
+		[SerializeField] Weapon[] tankWeapons;
+
+		bool game = false;
+		Tank controllableTank;
 
         void Start()
         {
             screens = new List<GameObject>()
-        {
-            startScreen,
-            gameScreen,
-            instructionsScreen,
-            endGameScreen
-        };
+			{
+				startScreen,
+				gameScreen,
+				instructionsScreen,
+				endGameScreen
+			};
             startScreen.SetActive(true);
 
             InitScene();
+        }
+
+		void Update()
+		{
+            if (!game)
+			{
+				return;
+			}
+
+			ProcessTankControls();
         }
 
         #region UI
@@ -56,6 +71,13 @@ namespace Game
         {
             startScreen.SetActive(false);
             gameScreen.SetActive(true);
+
+			controllableTank = Factory.TankFactory.Instance.GetRandom();
+			controllableTank.transform.position = Vector3.zero;
+			controllableTank.transform.eulerAngles = Vector3.zero;
+			controllableTank.SetData(tankWeapons);
+
+            game = true;
         }
 
         public void ShowInstructions()
@@ -72,6 +94,8 @@ namespace Game
         {
             screens.ForEach(s => s.SetActive(false));
             endGameScreen.SetActive(true);
+
+            game = false;
         }
 
         public void RestartGame()
@@ -97,5 +121,19 @@ namespace Game
         }
 
         #endregion
+
+		#region Tank
+
+		void ProcessTankControls()
+		{
+			if (controllableTank == null)
+			{
+				return;
+			}
+
+            throw new System.NotImplementedException();
+		}
+
+		#endregion
     }
 }
