@@ -30,8 +30,10 @@ namespace Game
         [SerializeField] GameObject endGameScreen;
         List<GameObject> screens;
 
-        [Header("Level")]
-        [SerializeField] Transform sceneFloor;
+        [Header("Scene")]
+		[SerializeField] Transform environment;
+        [SerializeField] SpriteRenderer groundSample;
+		[SerializeField] Sprite[] groundSprites;
         [SerializeField] Transform[] sceneBounds;
         [Range(5, 50)] [SerializeField] int sceneSize = 10;
 
@@ -109,7 +111,21 @@ namespace Game
 
         void InitScene()
         {
-            sceneFloor.localScale = Vector3.one * (sceneSize + 10);
+			var visibleSceneSize = sceneSize + 10;
+			var groundOffset = - visibleSceneSize / 2f + .5f;
+			for (int i = 0; i < visibleSceneSize; i++)
+			{
+				for (int j = 0; j < visibleSceneSize; j++)
+				{
+					Instantiate(
+                        groundSample, 
+						new Vector2(i + groundOffset, j + groundOffset),
+						Quaternion.identity,
+						environment)
+						.sprite = groundSprites[Random.Range(0, groundSprites.Length)];
+				}
+			}
+
 			var lineWidth = .1f;
             sceneBounds[0].position = Vector2.up * sceneSize / 2f;
             sceneBounds[0].localScale = new Vector2(sceneSize + lineWidth, lineWidth);
