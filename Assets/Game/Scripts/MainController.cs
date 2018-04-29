@@ -79,6 +79,8 @@ namespace Game
 			controllableTank.transform.eulerAngles = Vector3.zero;
 			controllableTank.SetData(tankWeapons, sceneSize);
 
+			Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(controllableTank.transform);
+
             game = true;
         }
 
