@@ -49,19 +49,27 @@ namespace Game
             throw new System.NotImplementedException();
         }
 
+		public void Shoot()
+		{
+			if (weapon != null)
+			{
+				weapon.Shoot();
+			}
+		}
+
 		#endregion
 
 		#region IMovable
 
 		public void Move(float direction)
 		{
-			transform.position += (transform.forward * direction).normalized * movementSpeed * direction * Time.deltaTime;
+			transform.position += (transform.up * direction).normalized * movementSpeed * direction * Time.deltaTime;
 			//TODO: check moving bounds
 		}
 
 		public void Rotate(float direction)
 		{
-            transform.Rotate(Vector3.forward * rotationSpeed * direction * Time.deltaTime);
+            transform.Rotate( -Vector3.forward * rotationSpeed * direction * Time.deltaTime);
 		}
 
         #endregion

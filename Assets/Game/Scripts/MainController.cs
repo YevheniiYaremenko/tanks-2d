@@ -14,7 +14,7 @@ namespace Game
         {
             get
             {
-                if (instance = null)
+                if (instance == null)
                 {
                     instance = FindObjectOfType<MainController>();
                 }
@@ -131,7 +131,20 @@ namespace Game
 				return;
 			}
 
-            throw new System.NotImplementedException();
+			controllableTank.Move(Input.GetAxis("Vertical"));
+            controllableTank.Rotate(Input.GetAxis("Horizontal"));
+			if (Input.GetKeyDown(KeyCode.X))
+			{
+				controllableTank.Shoot();
+			}
+			else if (Input.GetKeyDown(KeyCode.E))
+			{
+                controllableTank.NextWeapon();
+			}
+            else if (Input.GetKeyDown(KeyCode.Q))
+			{
+                controllableTank.PreviousWeapon();
+			}
 		}
 
 		#endregion

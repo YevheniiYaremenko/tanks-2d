@@ -44,3 +44,6 @@ TagManager:
   - name: Scene Object
     uniqueID: 2344370637
     locked: 0
+  - name: Tank
+    uniqueID: 528954473
+    locked: 0

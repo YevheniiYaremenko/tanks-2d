@@ -746,7 +746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87ab7dc1b3d942d79ebeb81e74337ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankPool: []
+  tankPool:
+  - {fileID: 114020697563507156, guid: 6d409536e0fe74f22ad21ae18e84f1f5, type: 2}
 --- !u!4 &639507949
 Transform:
   m_ObjectHideFlags: 0

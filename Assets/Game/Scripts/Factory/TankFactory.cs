@@ -10,18 +10,18 @@ namespace Game.Factory
         {
             get
             {
-                if (instance = null)
+                if (instance == null)
                 {
                     instance = FindObjectOfType<TankFactory>();
                 }
                 return instance;
             }
         }
-				[SerializeField] Tank[] tankPool;
+        [SerializeField] Tank[] tankPool;
 
-				public Tank GetRandom()
-				{
-					return Instantiate(tankPool[Random.Range(0, tankPool.Length)]);
-				}
+        public Tank GetRandom()
+        {
+            return Instantiate(tankPool[Random.Range(0, tankPool.Length)]);
+        }
     }
 }
