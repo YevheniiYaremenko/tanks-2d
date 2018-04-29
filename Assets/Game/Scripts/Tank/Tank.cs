@@ -13,24 +13,28 @@ namespace Game
 		[SerializeField] Transform[] weaponBases;
 
 		int currentWeaponId = 0;
-		Weapon weapon;
-		Weapon[] weapons;
+		Weapon[] installedWeapons;
+		Weapon[] availableWeapons;
 
 		void Awake()
 		{
 			Health = maxHealth;
+            installedWeapons = new Weapon[weaponBases.Length];
 		}
 
 		public void SetData(Weapon[] weapons)
 		{
-			this.weapons = weapons;
+			this.availableWeapons = weapons;
+
+            currentWeaponId = 0;
+			LoadWeapon();
 		}
 
         #region Weapon
 
         public void NextWeapon()
         {
-            currentWeaponId = currentWeaponId < weapons.Length - 1
+            currentWeaponId = currentWeaponId < availableWeapons.Length - 1
                 ? currentWeaponId + 1
                 : 0;
             LoadWeapon();
@@ -40,20 +44,30 @@ namespace Game
         {
             currentWeaponId = currentWeaponId > 0
                 ? currentWeaponId - 1
-                : weapons.Length - 1;
+                : availableWeapons.Length - 1;
             LoadWeapon();
         }
 
         public void LoadWeapon()
         {
-            throw new System.NotImplementedException();
+			for (int i = 0; i < installedWeapons.Length; i++)
+			{
+                if (installedWeapons[i] != null)
+                {
+                    DestroyImmediate(installedWeapons[i].gameObject);
+                }
+                installedWeapons[i] = Instantiate(availableWeapons[currentWeaponId],weaponBases[i].position, weaponBases[i].rotation, weaponBases[i]);
+			}
         }
 
 		public void Shoot()
 		{
-			if (weapon != null)
+			foreach(var weapon in installedWeapons)
 			{
-				weapon.Shoot();
+                if (weapon != null)
+                {
+                    weapon.Shoot();
+                }
 			}
 		}
 
