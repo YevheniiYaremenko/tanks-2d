@@ -80,7 +80,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1843028830530290}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.471, z: 0}
+  m_LocalPosition: {x: 0, y: 0.389, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4366506374381416}
@@ -112,6 +112,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startShootPoint: {fileID: 4436218966233966}
   damage: 120
+  reloadDuration: 1
+  shootEffect: {fileID: 1422909368210752, guid: 255668df9793d49e2ba43e6d139051b9,
+    type: 2}
+  hitEffect: {fileID: 0}
 --- !u!212 &212101258928334128
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -8,7 +8,9 @@ namespace Game
 	{
 		public override void Shoot()
 		{
-			throw new System.NotImplementedException();
+            base.Shoot();
+			
+			//TODO
 		}
 	}
 }

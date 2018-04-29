@@ -112,6 +112,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startShootPoint: {fileID: 4794164981497900}
   damage: 80
+  reloadDuration: 2
+  shootEffect: {fileID: 0}
+  hitEffect: {fileID: 0}
 --- !u!212 &212057461884364770
 SpriteRenderer:
   m_ObjectHideFlags: 1
