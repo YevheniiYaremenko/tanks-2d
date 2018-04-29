@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4413992374615716}
   - component: {fileID: 212339798338136674}
+  - component: {fileID: 60191322677098474}
   - component: {fileID: 114399610091864874}
   m_Layer: 0
   m_Name: Fast Tank
@@ -70,6 +71,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60191322677098474
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245187869383012}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.31, y: 2.05}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.345, y: -0.995}
+      - {x: 0.36499998, y: -0.885}
+      - {x: 0.575, y: -0.91499996}
+      - {x: 0.655, y: -0.79499996}
+      - {x: 0.655, y: 0.16499999}
+      - {x: 0.555, y: 0.205}
+      - {x: 0.42499998, y: 0.225}
+      - {x: 0.445, y: 0.315}
+      - {x: 0.435, y: 0.575}
+      - {x: 0.385, y: 0.98499995}
+      - {x: 0.36499998, y: 1.025}
+      - {x: -0.055, y: 1.025}
+      - {x: -0.105, y: 0.995}
+      - {x: -0.145, y: 1.025}
+      - {x: -0.355, y: 1.025}
+      - {x: -0.385, y: 0.98499995}
+      - {x: -0.405, y: 0.84499997}
+      - {x: -0.445, y: 0.415}
+      - {x: -0.45499998, y: 0.185}
+      - {x: -0.615, y: 0.185}
+      - {x: -0.655, y: 0.13499999}
+      - {x: -0.655, y: -0.525}
+      - {x: -0.625, y: -0.84499997}
+      - {x: -0.565, y: -0.895}
+      - {x: -0.355, y: -0.875}
+      - {x: -0.345, y: -0.995}
+      - {x: -0.315, y: -1.025}
+      - {x: -0.175, y: -1.025}
+      - {x: -0.105, y: -0.995}
+      - {x: -0.095, y: -0.79499996}
+      - {x: 0.16499999, y: -1.025}
+      - {x: 0.265, y: -1.025}
 --- !u!114 &114399610091864874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,6 +144,7 @@ MonoBehaviour:
   rotationSpeed: 130
   weaponBases:
   - {fileID: 4186371424450620}
+  outBounds: 0
 --- !u!212 &212339798338136674
 SpriteRenderer:
   m_ObjectHideFlags: 1

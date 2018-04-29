@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4388029536241644}
   - component: {fileID: 212356082571932768}
+  - component: {fileID: 60246098934055698}
   - component: {fileID: 114322252742244036}
   m_Layer: 0
   m_Name: Super Armed Tank
@@ -99,6 +100,49 @@ Transform:
   m_Father: {fileID: 4388029536241644}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60246098934055698
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738385040548856}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.32, y: 1.65}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.65999997, y: -0.73499995}
+      - {x: 0.65999997, y: -0.375}
+      - {x: 0.63, y: -0.345}
+      - {x: 0.63, y: 0.765}
+      - {x: 0.59, y: 0.825}
+      - {x: 0.19999999, y: 0.825}
+      - {x: 0.14999999, y: 0.765}
+      - {x: -0.13, y: 0.60499996}
+      - {x: -0.16, y: 0.765}
+      - {x: -0.22, y: 0.825}
+      - {x: -0.59999996, y: 0.825}
+      - {x: -0.63, y: 0.765}
+      - {x: -0.65999997, y: -0.385}
+      - {x: -0.65999997, y: -0.645}
+      - {x: -0.59999996, y: -0.825}
+      - {x: -0.17999999, y: -0.825}
+      - {x: -0.099999994, y: -0.765}
+      - {x: 0.19, y: -0.825}
+      - {x: 0.61, y: -0.825}
 --- !u!114 &114322252742244036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,6 +161,7 @@ MonoBehaviour:
   weaponBases:
   - {fileID: 4560071265054736}
   - {fileID: 4945460792236746}
+  outBounds: 0
 --- !u!212 &212356082571932768
 SpriteRenderer:
   m_ObjectHideFlags: 1

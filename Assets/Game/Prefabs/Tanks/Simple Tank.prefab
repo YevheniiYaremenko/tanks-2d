@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4217771451791408}
   - component: {fileID: 212491277160176590}
+  - component: {fileID: 60905344414838172}
   - component: {fileID: 114162554549899456}
   m_Layer: 0
   m_Name: Simple Tank
@@ -70,6 +71,42 @@ Transform:
   m_Father: {fileID: 4217771451791408}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60905344414838172
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1797036652897206}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.32, y: 1.71}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.65, y: 0.85499996}
+      - {x: 0.31, y: 0.85499996}
+      - {x: 0.22, y: 0.835}
+      - {x: -0.25, y: 0.625}
+      - {x: -0.29, y: 0.85499996}
+      - {x: -0.63, y: 0.85499996}
+      - {x: -0.65999997, y: 0.815}
+      - {x: -0.65999997, y: -0.825}
+      - {x: -0.61, y: -0.85499996}
+      - {x: 0.63, y: -0.85499996}
+      - {x: 0.65999997, y: -0.805}
+      - {x: 0.65999997, y: 0.835}
 --- !u!114 &114162554549899456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,6 +124,7 @@ MonoBehaviour:
   rotationSpeed: 90
   weaponBases:
   - {fileID: 4610483458774000}
+  outBounds: 0
 --- !u!212 &212491277160176590
 SpriteRenderer:
   m_ObjectHideFlags: 1

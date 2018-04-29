@@ -115,7 +115,7 @@ MonoBehaviour:
   reloadDuration: 1
   shootEffect: {fileID: 1422909368210752, guid: 255668df9793d49e2ba43e6d139051b9,
     type: 2}
-  hitEffect: {fileID: 0}
+  hitEffect: {fileID: 1714890923670812, guid: 3dc8e233b614849a1a21431b3aef49e4, type: 2}
 --- !u!212 &212815467699970882
 SpriteRenderer:
   m_ObjectHideFlags: 1

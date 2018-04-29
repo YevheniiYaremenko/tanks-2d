@@ -52,14 +52,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74469b8c39194d00870b4353e98afab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frames:
-  - {fileID: 21300000, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
-  - {fileID: 21300002, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
-  - {fileID: 21300004, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
-  - {fileID: 21300006, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
-  - {fileID: 21300008, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
-  - {fileID: 21300010, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
-  - {fileID: 21300012, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
+  animations:
+  - frames:
+    - {fileID: 21300000, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
+    - {fileID: 21300002, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
+    - {fileID: 21300004, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
+    - {fileID: 21300006, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
+    - {fileID: 21300008, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
+    - {fileID: 21300010, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
+    - {fileID: 21300012, guid: 681596740b40c44bb9bf5e507fe53eb9, type: 3}
   fps: 20
   playOnAwake: 1
   loop: 0
