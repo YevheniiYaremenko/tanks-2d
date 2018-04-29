@@ -75,7 +75,7 @@ namespace Game
 			controllableTank = Factory.TankFactory.Instance.GetRandom();
 			controllableTank.transform.position = Vector3.zero;
 			controllableTank.transform.eulerAngles = Vector3.zero;
-			controllableTank.SetData(tankWeapons);
+			controllableTank.SetData(tankWeapons, sceneSize);
 
             game = true;
         }
@@ -110,14 +110,15 @@ namespace Game
         void InitScene()
         {
             sceneFloor.localScale = Vector3.one * (sceneSize + 10);
+			var lineWidth = .1f;
             sceneBounds[0].position = Vector2.up * sceneSize / 2f;
-            sceneBounds[0].localScale = new Vector2(sceneSize + 1, 1);
+            sceneBounds[0].localScale = new Vector2(sceneSize + lineWidth, lineWidth);
             sceneBounds[1].position = Vector2.down * sceneSize / 2f;
-            sceneBounds[1].localScale = new Vector2(sceneSize + 1, 1);
+            sceneBounds[1].localScale = new Vector2(sceneSize + lineWidth, lineWidth);
             sceneBounds[2].position = Vector2.left * sceneSize / 2f;
-            sceneBounds[2].localScale = new Vector2(1, sceneSize + 1);
+            sceneBounds[2].localScale = new Vector2(lineWidth, sceneSize + lineWidth);
             sceneBounds[3].position = Vector2.right * sceneSize / 2f;
-            sceneBounds[3].localScale = new Vector2(1, sceneSize + 1);
+            sceneBounds[3].localScale = new Vector2(lineWidth, sceneSize + lineWidth);
         }
 
         #endregion

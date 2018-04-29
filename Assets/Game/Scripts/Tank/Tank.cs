@@ -16,18 +16,23 @@ namespace Game
 		Weapon[] installedWeapons;
 		Weapon[] availableWeapons;
 
+		float sceneHalfSize;
+		[SerializeField] bool outBounds = false;
+
 		void Awake()
 		{
 			Health = maxHealth;
             installedWeapons = new Weapon[weaponBases.Length];
 		}
 
-		public void SetData(Weapon[] weapons)
+		public void SetData(Weapon[] weapons, float sceneSize)
 		{
 			this.availableWeapons = weapons;
 
             currentWeaponId = 0;
 			LoadWeapon();
+
+            sceneHalfSize = sceneSize / 2f;
 		}
 
         #region Weapon
@@ -77,8 +82,21 @@ namespace Game
 
 		public void Move(float direction)
 		{
-			transform.position += (transform.up * direction).normalized * movementSpeed * Mathf.Abs(direction) * Time.deltaTime;
-			//TODO: check moving bounds
+			var newPosition = transform.position + (transform.up * direction).normalized * movementSpeed * Mathf.Abs(direction) * Time.deltaTime;
+            if (outBounds && IsOutOfBounds(newPosition))
+			{
+				return;
+			}
+			outBounds = IsOutOfBounds(newPosition);
+			transform.position = new Vector3(
+                Mathf.Clamp(newPosition.x, -sceneHalfSize, sceneHalfSize),
+                Mathf.Clamp(newPosition.y, -sceneHalfSize, sceneHalfSize)
+			);
+		}
+
+		bool IsOutOfBounds(Vector3 position)
+		{
+			return Mathf.Abs(position.x) > sceneHalfSize || Mathf.Abs(position.y) > sceneHalfSize;
 		}
 
 		public void Rotate(float direction)
