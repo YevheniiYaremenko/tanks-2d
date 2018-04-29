@@ -113,7 +113,8 @@ MonoBehaviour:
   startShootPoint: {fileID: 4794164981497900}
   damage: 80
   reloadDuration: 2
-  shootEffect: {fileID: 0}
+  shootEffect: {fileID: 1422909368210752, guid: e58155511f598467788e50a1f0c00507,
+    type: 2}
   hitEffect: {fileID: 1714890923670812, guid: 3dc8e233b614849a1a21431b3aef49e4, type: 2}
 --- !u!212 &212057461884364770
 SpriteRenderer:
