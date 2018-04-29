@@ -747,7 +747,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tankPool:
-  - {fileID: 114020697563507156, guid: 6d409536e0fe74f22ad21ae18e84f1f5, type: 2}
+  - {fileID: 114399610091864874, guid: f40a3d93dc32145ca8f7b72a10893daa, type: 2}
+  - {fileID: 114073219946630406, guid: 3487010c1c4c74affa787c808a68e75d, type: 2}
+  - {fileID: 114162554549899456, guid: 95c442eac684141919fe8960bd965c45, type: 2}
+  - {fileID: 114322252742244036, guid: dcc30a58e262f4a8ba4064a1ea47b464, type: 2}
 --- !u!4 &639507949
 Transform:
   m_ObjectHideFlags: 0
@@ -1720,7 +1723,10 @@ MonoBehaviour:
   - {fileID: 1047086559}
   - {fileID: 1247327044}
   sceneSize: 20
-  tankWeapons: []
+  tankWeapons:
+  - {fileID: 114150611384174424, guid: bb056cc9cdbfe4d33ba4f587d89323a2, type: 2}
+  - {fileID: 114481924391108080, guid: 0fa3466c9a6a5440aab3a42dc83d59ae, type: 2}
+  - {fileID: 114908344328928262, guid: 1c5219f685c744a159ce8ef539fa5e0d, type: 2}
 --- !u!4 &1736122546
 Transform:
   m_ObjectHideFlags: 0
