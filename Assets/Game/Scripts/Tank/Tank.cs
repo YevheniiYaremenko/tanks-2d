@@ -63,7 +63,7 @@ namespace Game
 
 		public void Move(float direction)
 		{
-			transform.position += (transform.up * direction).normalized * movementSpeed * direction * Time.deltaTime;
+			transform.position += (transform.up * direction).normalized * movementSpeed * Mathf.Abs(direction) * Time.deltaTime;
 			//TODO: check moving bounds
 		}
 
