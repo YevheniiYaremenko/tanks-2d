@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public abstract class Weapon : MonoBehaviour
+    public abstract class Weapon : MonoBehaviour, IShootable
     {
       [SerializeField] protected Transform startShootPoint;
       [SerializeField] protected float damage;
@@ -14,6 +14,8 @@ namespace Game
       [SerializeField] protected GameObject hitEffect;
 
       protected float lastReloadTime = 0;
+
+      public float ReloadingProgress { get { return Mathf.Clamp01((Time.time - lastReloadTime) / reloadDuration);} }
 
       public virtual void Shoot()
       {
