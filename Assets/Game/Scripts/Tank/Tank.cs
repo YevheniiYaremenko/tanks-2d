@@ -9,6 +9,7 @@ namespace Game
 		[SerializeField] float maxHealth = 100;
 		[Range(0f, 1f)] [SerializeField] float defence = 0.5f;
 		[SerializeField] float movementSpeed = 1;
+		[SerializeField] float inverseMoveMult = .5f;
 		[SerializeField] float rotationSpeed = 90;
 		[SerializeField] Transform[] weaponBases;
 
@@ -82,7 +83,7 @@ namespace Game
 
 		public void Move(float direction)
 		{
-			var newPosition = transform.position + (transform.up * direction).normalized * movementSpeed * Mathf.Abs(direction) * Time.deltaTime;
+			var newPosition = transform.position + (transform.up * direction).normalized * movementSpeed * Mathf.Abs(direction) * Time.deltaTime * (direction >= 0 ? 1 : inverseMoveMult);
             if (outBounds && IsOutOfBounds(newPosition))
 			{
 				return;
