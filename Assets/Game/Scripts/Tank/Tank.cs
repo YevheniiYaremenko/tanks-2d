@@ -1,28 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game
 {
-    public class Tank : MonoBehaviour, IDamaging, IMovable
+    public class Tank : DamagingObject, IDamaging, IMovable
     {
-		[SerializeField] float maxHealth = 100;
-		[Range(0f, 1f)] [SerializeField] float defence = 0.5f;
+		[Header("Movement")]
 		[SerializeField] float movementSpeed = 1;
 		[SerializeField] float inverseMoveMult = .5f;
 		[SerializeField] float rotationSpeed = 90;
+        float sceneHalfSize;
+        bool outBounds = false;
+
+		[Header("Weapon")]
 		[SerializeField] Transform[] weaponBases;
         [SerializeField] Weapon[] availableWeapons;
-
 		int currentWeaponId = 0;
 		Weapon[] installedWeapons;
 
-		float sceneHalfSize;
-		[SerializeField] bool outBounds = false;
-
 		void Awake()
 		{
-			Health = maxHealth;
             installedWeapons = new Weapon[weaponBases.Length];
 		}
 
@@ -104,29 +103,5 @@ namespace Game
 		}
 
         #endregion
-
-        #region IDamaging
-
-        public float Health { get; private set; }
-		public event System.Action onDeath;
-
-		public void DealDamage(float damage)
-		{
-            Health = Mathf.Max(Health - damage * (1 - defence), 0);
-			if (Health == 0)
-			{
-				Death();
-			}
-		}
-
-		public void Death()
-		{
-			if (onDeath != null)
-			{
-				onDeath.Invoke();
-			}
-		}
-
-		#endregion
     }
 }
