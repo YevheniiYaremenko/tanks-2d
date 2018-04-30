@@ -32,7 +32,7 @@ namespace Game
         #region IDamaging
 
         public float Health { get; private set; }
-        public event System.Action onDeath;
+        public event System.Action<bool> onDeath;
 
         public void DealDamage(float damage)
         {
@@ -73,7 +73,7 @@ namespace Game
 
             if (onDeath != null)
             {
-                onDeath.Invoke();
+                onDeath.Invoke(Health == 0);
             }
         }
 

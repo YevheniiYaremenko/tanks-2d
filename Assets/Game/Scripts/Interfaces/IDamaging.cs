@@ -3,5 +3,5 @@
 	float Health { get; }
 	void DealDamage(float damage);
 	void Death();
-    event System.Action onDeath;
+    event System.Action<bool> onDeath;
 }

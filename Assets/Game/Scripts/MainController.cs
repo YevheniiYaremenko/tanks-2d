@@ -76,7 +76,11 @@ namespace Game
 			ProcessTankControls();
 			UpdateGameScreen();
 
-            timer -= Time.deltaTime;
+            timer = Mathf.Max(0, timer - Time.deltaTime);
+			if (timer == 0)
+			{
+				EndGame();
+			}
         }
 
         #region UI
@@ -90,7 +94,7 @@ namespace Game
 			controllableTank.transform.position = Vector3.zero;
 			controllableTank.transform.eulerAngles = Vector3.zero;
 			controllableTank.SetData(sceneSize);
-			controllableTank.onDeath += () => EndGame();
+			controllableTank.onDeath += (killing) => EndGame();
 
 			Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(controllableTank.transform);
 
@@ -101,10 +105,13 @@ namespace Game
 				(enemy) => 
 				{
 					enemy.SetData(controllableTank != null ? controllableTank.transform : null);
-					enemy.onDeath += () => 
+					enemy.onDeath += (killing) => 
 					{
-						session.score += enemy.KillBonus;
-						session.kills++;
+						if (killing)
+						{
+                            session.score += enemy.KillBonus;
+                            session.kills++;
+						}
 					};
 				});
 			Spawner.EnemySpawner.Instance.Spawning = true;
@@ -154,7 +161,7 @@ namespace Game
 		{
             scoreText.text = string.Format("Score: {0}", session.score);
             killsText.text = string.Format("Kills: {0}", session.kills);
-            timeText.text = string.Format("Time: {0}", timer);
+            timeText.text = string.Format("Time: {0}", Utils.TimeHelper.GetTime((int)timer));
 		}
 
         #endregion
