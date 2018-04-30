@@ -24,6 +24,12 @@ namespace Game.Utils
 			}
 
 			var targetViewportPosition = Camera.main.WorldToViewportPoint(target.position);
+			if (
+				Mathf.Clamp(targetViewportPosition.x, followArea.x, followArea.z) == targetViewportPosition.x
+				&& Mathf.Clamp(targetViewportPosition.y, followArea.y, followArea.w) == targetViewportPosition.y)
+			{
+				return;
+			}
 			var cameraViewportPosition = new Vector3(
                 0.5f - Mathf.Clamp(targetViewportPosition.x, followArea.x, followArea.z) + targetViewportPosition.x,
                 0.5f - Mathf.Clamp(targetViewportPosition.y, followArea.y, followArea.w) + targetViewportPosition.y

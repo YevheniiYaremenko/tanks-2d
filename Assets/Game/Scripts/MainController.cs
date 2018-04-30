@@ -133,6 +133,7 @@ namespace Game
         {
             screens.ForEach(s => s.SetActive(false));
             endGameScreen.SetActive(true);
+            Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(null);
 
             Spawner.EnemySpawner.Instance.Spawning = false;
 			Spawner.EnemySpawner.Instance.Reset();
