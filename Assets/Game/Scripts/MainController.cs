@@ -22,12 +22,22 @@ namespace Game
             }
         }
 
+		[Header("Data")]
+		[SerializeField] Model.Data data;
+
         [Header("UI")]
-        [SerializeField]
-        GameObject startScreen;
-        [SerializeField] GameObject gameScreen;
+        [SerializeField] GameObject startScreen;
         [SerializeField] GameObject instructionsScreen;
+		[Header(" - Game Screen")]
+        [SerializeField] GameObject gameScreen;
+        [SerializeField] Text scoreText;
+        [SerializeField] Text timeText;
+		[SerializeField] Text killsText;
+		[Header(" - End Game Screen")]
         [SerializeField] GameObject endGameScreen;
+        [SerializeField] Text endGameTitle;
+        [SerializeField] Text levelInfoText;
+		[TextArea] [SerializeField] string levelInfoFormat;
         List<GameObject> screens;
 
         [Header("Scene")]
@@ -36,9 +46,11 @@ namespace Game
 		[SerializeField] Sprite[] groundSprites;
         [SerializeField] Transform[] sceneBounds;
         [Range(5, 50)] [SerializeField] int sceneSize = 10;
+		[SerializeField] float timer = 120;
 
 		bool game = false;
 		Tank controllableTank;
+		Model.Session session;
 
         void Start()
         {
@@ -62,6 +74,9 @@ namespace Game
 			}
 
 			ProcessTankControls();
+			UpdateGameScreen();
+
+            timer -= Time.deltaTime;
         }
 
         #region UI
@@ -75,10 +90,23 @@ namespace Game
 			controllableTank.transform.position = Vector3.zero;
 			controllableTank.transform.eulerAngles = Vector3.zero;
 			controllableTank.SetData(sceneSize);
+			controllableTank.onDeath += () => EndGame();
 
 			Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(controllableTank.transform);
 
-			Spawner.EnemySpawner.Instance.SetData(sceneSize + 5, (enemy) => enemy.SetData(controllableTank != null ? controllableTank.transform : null));
+            session = new Model.Session();
+
+			Spawner.EnemySpawner.Instance.SetData(
+				sceneSize + 5, 
+				(enemy) => 
+				{
+					enemy.SetData(controllableTank != null ? controllableTank.transform : null);
+					enemy.onDeath += () => 
+					{
+						session.score += enemy.KillBonus;
+						session.kills++;
+					};
+				});
 			Spawner.EnemySpawner.Instance.Spawning = true;
 
             game = true;
@@ -99,13 +127,35 @@ namespace Game
             screens.ForEach(s => s.SetActive(false));
             endGameScreen.SetActive(true);
 
+            Spawner.EnemySpawner.Instance.Spawning = false;
+			Spawner.EnemySpawner.Instance.Reset();
+
             game = false;
+
+			data.RegisterSession(session);
+
+            endGameTitle.text = controllableTank == null ? "You Lose!" : "You Win!";
+			if (controllableTank != null)
+			{
+                levelInfoText.text = string.Format(
+                levelInfoFormat,
+                data.Sessions,
+                session.score + (session.score == data.BestScore ? " (best score)" : ""),
+                session.kills + (session.kills == data.MaxKills ? " (best score)" : ""));
+			}
         }
 
         public void RestartGame()
         {
             SceneManager.LoadScene("Main");
         }
+
+		void UpdateGameScreen()
+		{
+            scoreText.text = string.Format("Score: {0}", session.score);
+            killsText.text = string.Format("Kills: {0}", session.kills);
+            timeText.text = string.Format("Time: {0}", timer);
+		}
 
         #endregion
 

@@ -38,6 +38,11 @@ namespace Game.Spawner
 			this.onSpawn = onSpawn;
 		}
 
+		public void Reset()
+		{
+			spawnPool.ForEach(x => Destroy(x.gameObject));
+		}
+
 		void Awake()
 		{
 			spawnPool = new List<T>();

@@ -12,7 +12,10 @@ namespace Game.AI
 
         [Header("Enemy")]
 		[SerializeField] float damage = 100;
+		[SerializeField] int killBonus = 10;
 		Transform target;
+
+		public int KillBonus { get { return killBonus; } }
 
         public void SetData(Transform target)
         {

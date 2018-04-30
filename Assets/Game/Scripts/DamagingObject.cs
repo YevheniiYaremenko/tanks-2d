@@ -54,11 +54,6 @@ namespace Game
 
         public void Death()
         {
-            if (onDeath != null)
-            {
-                onDeath.Invoke();
-            }
-
             if (explosionEffect != null)
             {
                 Instantiate(explosionEffect, transform.position, Quaternion.identity);
@@ -75,6 +70,11 @@ namespace Game
 			}
             GetComponent<Collider2D>().enabled = false;
             Destroy(this);
+
+            if (onDeath != null)
+            {
+                onDeath.Invoke();
+            }
         }
 
         #endregion
