@@ -81,6 +81,9 @@ namespace Game
 
 			Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(controllableTank.transform);
 
+			Spawner.EnemySpawner.Instance.SetData(sceneSize + 10, (enemy) => enemy.SetData(controllableTank.transform));
+			Spawner.EnemySpawner.Instance.Spawning = true;
+
             game = true;
         }
 
