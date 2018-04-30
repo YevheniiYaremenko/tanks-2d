@@ -90,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 1199903042871594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 224058719247074924}
   m_Father: {fileID: 0}
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399bac17e06cb40a5b2ee8f56fee10d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  defence: 0.5
+  maxHealth: 150
+  defence: 0.2
   sprites:
   - {fileID: 21300018, guid: ded7b85f06a3e479ba95639c9267748b, type: 3}
   - {fileID: 21300020, guid: ded7b85f06a3e479ba95639c9267748b, type: 3}
@@ -205,9 +205,10 @@ MonoBehaviour:
   deathSprite: {fileID: 21300022, guid: ded7b85f06a3e479ba95639c9267748b, type: 3}
   ui: {fileID: 1675864068740596}
   healthBar: {fileID: 114225111995023718}
-  movementSpeed: 1
+  movementSpeed: 2
   rotationSpeed: 90
-  damage: 100
+  damage: 120
+  killBonus: 15
 --- !u!114 &114336987539160692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -358,7 +359,7 @@ RectTransform:
   m_GameObject: {fileID: 1675864068740596}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
+  m_LocalScale: {x: 0.003333333, y: 0.003333333, z: 0.003333333}
   m_Children:
   - {fileID: 224445567954358932}
   m_Father: {fileID: 4034300780096702}

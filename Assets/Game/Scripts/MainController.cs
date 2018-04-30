@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using Game.Spawner;
 
 namespace Game
 {
@@ -100,8 +101,8 @@ namespace Game
 
             session = new Model.Session();
 
-			Spawner.EnemySpawner.Instance.SetData(
-				sceneSize + 5, 
+			EnemySpawner.Instance.SetData(
+				Camera.main.orthographicSize * 3, 
 				(enemy) => 
 				{
 					enemy.SetData(controllableTank != null ? controllableTank.transform : null);
@@ -114,7 +115,8 @@ namespace Game
 						}
 					};
 				});
-			Spawner.EnemySpawner.Instance.Spawning = true;
+			EnemySpawner.Instance.Spawning = true;
+			EnemySpawner.Instance.SetSpawnCenter(controllableTank.transform);
 
             game = true;
         }
@@ -135,8 +137,8 @@ namespace Game
             endGameScreen.SetActive(true);
             Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(null);
 
-            Spawner.EnemySpawner.Instance.Spawning = false;
-			Spawner.EnemySpawner.Instance.Reset();
+            EnemySpawner.Instance.Spawning = false;
+			EnemySpawner.Instance.Reset();
 
             game = false;
 

@@ -38,6 +38,11 @@ namespace Game.Spawner
 			this.onSpawn = onSpawn;
 		}
 
+		public void SetSpawnCenter(Transform center)
+		{
+			spawnCenter = center;
+		}
+
 		public void Reset()
 		{
 			spawnPool.ForEach(x => Destroy(x.gameObject));

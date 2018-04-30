@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startShootPoint: {fileID: 4436218966233966}
-  damage: 120
-  reloadDuration: 1
+  damage: 500
+  reloadDuration: 3
   shootEffect: {fileID: 1422909368210752, guid: 255668df9793d49e2ba43e6d139051b9,
     type: 2}
   hitEffect: {fileID: 1714890923670812, guid: 3dc8e233b614849a1a21431b3aef49e4, type: 2}
@@ -148,7 +148,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 528954473
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9d0adaa1626ba4a9a8c5da02047225b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

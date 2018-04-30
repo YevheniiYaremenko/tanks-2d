@@ -140,7 +140,7 @@ Transform:
   m_GameObject: {fileID: 1797036652897206}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4610483458774000}
   - {fileID: 224164162238168230}
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea77bb0a3187648e983f86e2693550f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 900
   defence: 0.5
   sprites: []
   explosionEffect: {fileID: 1714890923670812, guid: 855391860ca114443ad5e45290086a2b,
@@ -263,7 +263,7 @@ MonoBehaviour:
   ui: {fileID: 1912606130306440}
   healthBar: {fileID: 114732109900202494}
   weaponBar: {fileID: 114596896829133662}
-  movementSpeed: 1
+  movementSpeed: 1.7
   inverseMoveMult: 0.5
   rotationSpeed: 90
   weaponBases:

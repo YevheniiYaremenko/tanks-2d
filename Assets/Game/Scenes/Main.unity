@@ -1238,6 +1238,8 @@ MonoBehaviour:
   - {fileID: 114591805641260250, guid: 591a57c4827ca482c877a93def220806, type: 2}
   - {fileID: 114280632360778218, guid: 2a50b27fd2aee47e4b3cef47ec9567f7, type: 2}
   - {fileID: 114280987069127028, guid: b6779343feb6547969da6bf74c5e875e, type: 2}
+  - {fileID: 114012618124054020, guid: 3f31f34074e2e457ea5e7571cae6a624, type: 2}
+  - {fileID: 114526960005282782, guid: 2915fd827da2a40f180e1f7bce8f4a25, type: 2}
 --- !u!1 &642183878
 GameObject:
   m_ObjectHideFlags: 0
@@ -2400,8 +2402,8 @@ MonoBehaviour:
   - {fileID: 112475880}
   - {fileID: 1047086559}
   - {fileID: 1247327044}
-  sceneSize: 15
-  timer: 30
+  sceneSize: 25
+  timer: 120
 --- !u!4 &1736122546
 Transform:
   m_ObjectHideFlags: 0
