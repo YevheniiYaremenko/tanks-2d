@@ -994,9 +994,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e332199b1c04ec382580214a8f1dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnCount: 10
+  minSpawnCount: 5
   spawnCenter: {fileID: 925476893}
   spawnRadius: 5
+  spawning: 0
 --- !u!4 &925476893
 Transform:
   m_ObjectHideFlags: 0
@@ -1623,7 +1624,7 @@ MonoBehaviour:
   - {fileID: 112475880}
   - {fileID: 1047086559}
   - {fileID: 1247327044}
-  sceneSize: 10
+  sceneSize: 15
   tankWeapons:
   - {fileID: 114150611384174424, guid: bb056cc9cdbfe4d33ba4f587d89323a2, type: 2}
   - {fileID: 114481924391108080, guid: 0fa3466c9a6a5440aab3a42dc83d59ae, type: 2}
