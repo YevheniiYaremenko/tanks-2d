@@ -16,13 +16,17 @@ namespace Game
         SpriteRenderer renderer;
 
         [Header("UI")]
+		[SerializeField] GameObject ui;
         [SerializeField] Image healthBar;
-        [SerializeField] Image weaponBar;
 
-		void Awake()
+		protected virtual void Awake()
 		{
             Health = maxHealth;
             renderer = GetComponent<SpriteRenderer>();
+			if (healthBar != null && this is AI.Enemy)
+			{
+				healthBar.transform.parent.localScale = new Vector3( Mathf.Sqrt(Health / 100f), 1, 1);
+			}
 		}
 
         #region IDamaging
@@ -37,14 +41,14 @@ namespace Game
             {
                 Death();
             }
-            else
+            else if (sprites.Length > 0)
             {
                 renderer.sprite = sprites[Mathf.Min(sprites.Length - 1, (int)((maxHealth - Health) / maxHealth * sprites.Length))];
             }
 
             if (healthBar != null)
             {
-
+				healthBar.fillAmount = Health / maxHealth;
             }
         }
 
@@ -65,6 +69,10 @@ namespace Game
                 renderer.sprite = deathSprite;
             }
 
+			if (ui != null)
+			{
+                ui.SetActive(false);
+			}
             GetComponent<Collider2D>().enabled = false;
             Destroy(this);
         }

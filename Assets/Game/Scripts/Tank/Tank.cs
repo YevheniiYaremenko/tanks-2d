@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 namespace Game
 {
     public class Tank : DamagingObject, IDamaging, IMovable
     {
+        [SerializeField] Image weaponBar;
+
 		[Header("Movement")]
 		[SerializeField] float movementSpeed = 1;
 		[SerializeField] float inverseMoveMult = .5f;
@@ -20,9 +23,19 @@ namespace Game
 		int currentWeaponId = 0;
 		Weapon[] installedWeapons;
 
-		void Awake()
+		protected override void Awake()
 		{
+            base.Awake();
             installedWeapons = new Weapon[weaponBases.Length];
+		}
+
+        void Update()
+		{
+			weaponBar.transform.parent.gameObject.SetActive(installedWeapons[0] != null && installedWeapons[0].ReloadingProgress < 1);
+			if (installedWeapons[0] != null)
+			{
+				weaponBar.fillAmount = installedWeapons[0].ReloadingProgress;
+			}
 		}
 
 		public void SetData(float sceneSize)

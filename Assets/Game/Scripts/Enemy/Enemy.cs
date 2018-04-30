@@ -19,7 +19,7 @@ namespace Game.AI
             this.target = target;
         }
 
-		void Update()
+        void Update()
 		{
 			if (target == null)
 			{
