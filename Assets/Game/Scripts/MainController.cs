@@ -37,9 +37,6 @@ namespace Game
         [SerializeField] Transform[] sceneBounds;
         [Range(5, 50)] [SerializeField] int sceneSize = 10;
 
-		[Header("Tank")]
-		[SerializeField] Weapon[] tankWeapons;
-
 		bool game = false;
 		Tank controllableTank;
 
@@ -77,7 +74,7 @@ namespace Game
 			controllableTank = Factory.TankFactory.Instance.GetRandom();
 			controllableTank.transform.position = Vector3.zero;
 			controllableTank.transform.eulerAngles = Vector3.zero;
-			controllableTank.SetData(tankWeapons, sceneSize);
+			controllableTank.SetData(sceneSize);
 
 			Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(controllableTank.transform);
 

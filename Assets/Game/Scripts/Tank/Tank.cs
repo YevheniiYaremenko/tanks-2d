@@ -12,10 +12,10 @@ namespace Game
 		[SerializeField] float inverseMoveMult = .5f;
 		[SerializeField] float rotationSpeed = 90;
 		[SerializeField] Transform[] weaponBases;
+        [SerializeField] Weapon[] availableWeapons;
 
 		int currentWeaponId = 0;
 		Weapon[] installedWeapons;
-		Weapon[] availableWeapons;
 
 		float sceneHalfSize;
 		[SerializeField] bool outBounds = false;
@@ -26,10 +26,8 @@ namespace Game
             installedWeapons = new Weapon[weaponBases.Length];
 		}
 
-		public void SetData(Weapon[] weapons, float sceneSize)
+		public void SetData(float sceneSize)
 		{
-			this.availableWeapons = weapons;
-
             currentWeaponId = 0;
 			LoadWeapon();
 
