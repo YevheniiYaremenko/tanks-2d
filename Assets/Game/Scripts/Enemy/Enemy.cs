@@ -12,13 +12,18 @@ namespace Game.AI
         [SerializeField] float rotationSpeed = 90;
 		[SerializeField] float damage = 100;
 
-		[SerializeField] GameObject explosionEffect;
+		[SerializeField] Sprite[] sprites;
 
+		[SerializeField] GameObject explosionEffect;
+		[SerializeField] Sprite deathSprite;
+
+        SpriteRenderer renderer;
 		Transform target;
 
         void Awake()
         {
             Health = maxHealth;
+			renderer = GetComponent<SpriteRenderer>();
         }
 
         public void SetData(Transform target)
@@ -73,11 +78,15 @@ namespace Game.AI
 
         public void DealDamage(float damage)
         {
-            Health = Mathf.Max(Health - damage * (1 - defence));
+            Health = Mathf.Max(Health - damage * (1 - defence), 0);
             if (Health == 0)
             {
                 Death();
             }
+			else
+			{
+                renderer.sprite = sprites[Mathf.Min(sprites.Length - 1, (int)((maxHealth - Health) / maxHealth * sprites.Length))];
+			}
         }
 
         public void Death()
@@ -92,7 +101,13 @@ namespace Game.AI
 				Instantiate(explosionEffect, transform.position, Quaternion.identity);
 			}
 
-			Destroy(gameObject);
+			if (deathSprite != null)
+			{
+				renderer.sprite = deathSprite;
+			}
+
+			GetComponent<Collider2D>().enabled = false;
+			Destroy(this);
         }
 
         #endregion

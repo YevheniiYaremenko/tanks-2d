@@ -112,7 +112,7 @@ namespace Game
 
 		public void DealDamage(float damage)
 		{
-			Health = Mathf.Max(Health - damage * (1 - defence));
+            Health = Mathf.Max(Health - damage * (1 - defence), 0);
 			if (Health == 0)
 			{
 				Death();

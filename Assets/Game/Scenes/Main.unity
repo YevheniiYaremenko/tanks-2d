@@ -166,7 +166,7 @@ Camera:
   far clip plane: 10
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -739,6 +739,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool:
   - {fileID: 114018894651562130, guid: c5accb200a3e546f68454a7a0be942b1, type: 2}
+  - {fileID: 114787983099102626, guid: 81850a20821bb4be3bc03746a76e4fe7, type: 2}
+  - {fileID: 114591805641260250, guid: 591a57c4827ca482c877a93def220806, type: 2}
+  - {fileID: 114280632360778218, guid: 2a50b27fd2aee47e4b3cef47ec9567f7, type: 2}
+  - {fileID: 114280987069127028, guid: b6779343feb6547969da6bf74c5e875e, type: 2}
 --- !u!1 &642183878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,10 +1629,6 @@ MonoBehaviour:
   - {fileID: 1047086559}
   - {fileID: 1247327044}
   sceneSize: 15
-  tankWeapons:
-  - {fileID: 114150611384174424, guid: bb056cc9cdbfe4d33ba4f587d89323a2, type: 2}
-  - {fileID: 114481924391108080, guid: 0fa3466c9a6a5440aab3a42dc83d59ae, type: 2}
-  - {fileID: 114908344328928262, guid: 1c5219f685c744a159ce8ef539fa5e0d, type: 2}
 --- !u!4 &1736122546
 Transform:
   m_ObjectHideFlags: 0
