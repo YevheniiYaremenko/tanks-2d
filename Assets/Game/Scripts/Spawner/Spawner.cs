@@ -55,7 +55,7 @@ namespace Game.Spawner
 			while (spawnPool.Count < minSpawnCount)
 			{
 				T item = Factory.Factory<T>.Instance.GetRandom();
-				var angle = Random.Range(0, Mathf.PI);
+				var angle = Random.Range(0, 2 * Mathf.PI);
 				var direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
 				item.transform.position = spawnCenter.position + spawnRadius * direction;
 				item.transform.up = -direction;
