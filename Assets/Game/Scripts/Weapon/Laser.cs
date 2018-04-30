@@ -26,7 +26,7 @@ namespace Game
                     Instantiate(hitEffect, hit.point, Quaternion.identity);
                 }
 
-                var damageHandler = hit.collider.GetComponent<IDamageHandler>();
+                var damageHandler = hit.collider.GetComponent<IDamaging>();
                 if (damageHandler != null)
                 {
                     damageHandler.DealDamage(damage);

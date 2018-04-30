@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class Tank : MonoBehaviour, IDamageHandler, IMovable
+    public class Tank : MonoBehaviour, IDamaging, IMovable
     {
 		[SerializeField] float maxHealth = 100;
 		[Range(0f, 1f)] [SerializeField] float defence = 0.5f;
@@ -105,7 +105,7 @@ namespace Game
 
         #endregion
 
-        #region IDamageHandler
+        #region IDamaging
 
         public float Health { get; private set; }
 		public event System.Action onDeath;

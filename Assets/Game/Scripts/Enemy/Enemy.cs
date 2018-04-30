@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.AI
 {
-    public abstract class Enemy : MonoBehaviour, IDamageHandler, IMovable
+    public abstract class Enemy : MonoBehaviour, IDamaging, IMovable
     {
         [SerializeField] float maxHealth = 100;
         [Range(0f, 1f)] [SerializeField] float defence = 0.5f;
@@ -47,7 +47,7 @@ namespace Game.AI
 		{
             if (col.transform == target)
             {
-                var damageHandler = col.transform.GetComponent<IDamageHandler>();
+                var damageHandler = col.transform.GetComponent<IDamaging>();
                 if (damageHandler != null)
                 {
                     damageHandler.DealDamage(damage);
@@ -71,7 +71,7 @@ namespace Game.AI
 
         #endregion
 
-        #region IDamageHandler
+        #region IDamaging
 
         public float Health { get; private set; }
         public event System.Action onDeath;

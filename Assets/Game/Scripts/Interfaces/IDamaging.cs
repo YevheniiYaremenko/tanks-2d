@@ -1,4 +1,4 @@
-﻿public interface IDamageHandler
+﻿public interface IDamaging
 {
 	float Health { get; }
 	void DealDamage(float damage);
