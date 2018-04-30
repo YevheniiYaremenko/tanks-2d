@@ -689,6 +689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 639507949}
   - component: {fileID: 639507948}
+  - component: {fileID: 639507950}
   m_Layer: 0
   m_Name: Factories
   m_TagString: Untagged
@@ -707,7 +708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87ab7dc1b3d942d79ebeb81e74337ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankPool:
+  pool:
   - {fileID: 114399610091864874, guid: f40a3d93dc32145ca8f7b72a10893daa, type: 2}
   - {fileID: 114073219946630406, guid: 3487010c1c4c74affa787c808a68e75d, type: 2}
   - {fileID: 114162554549899456, guid: 95c442eac684141919fe8960bd965c45, type: 2}
@@ -725,6 +726,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &639507950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 639507947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922effe73b47f408f9b6bc98a04314bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: []
 --- !u!1 &642183878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,6 +1584,7 @@ MonoBehaviour:
   - {fileID: 114150611384174424, guid: bb056cc9cdbfe4d33ba4f587d89323a2, type: 2}
   - {fileID: 114481924391108080, guid: 0fa3466c9a6a5440aab3a42dc83d59ae, type: 2}
   - {fileID: 114908344328928262, guid: 1c5219f685c744a159ce8ef539fa5e0d, type: 2}
+  enemy: {fileID: 114018894651562130, guid: c5accb200a3e546f68454a7a0be942b1, type: 2}
 --- !u!4 &1736122546
 Transform:
   m_ObjectHideFlags: 0
