@@ -63,6 +63,7 @@ namespace Game
             {
                 renderer.sprite = deathSprite;
             }
+            renderer.sortingOrder = 0;
 
 			if (ui != null)
 			{
