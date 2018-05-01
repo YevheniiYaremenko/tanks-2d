@@ -3,6 +3,7 @@ Temp
 XCode
 ExportedObj/
 Art/
+Build/
 obj/
 .vs/
 *.svd
