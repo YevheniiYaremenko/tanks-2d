@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Game.Factory
 {
@@ -20,9 +21,15 @@ namespace Game.Factory
 
         [SerializeField] protected T[] pool;
 
-		public virtual X GetItem<X>() where X : T
+		public System.Type[] GetTypes()
 		{
-			return pool.FirstOrDefault(x => x is X) as X;
+			return pool.Select(x => x.GetType()).Distinct().ToArray();
+		}
+
+		public virtual X GetItem<X>(System.Type type) where X : T
+		{
+			var items = pool.Where(x => x.GetType() == type).Select(x => x as X).ToArray();
+			return items.Count() > 0 ? Instantiate(items[Random.Range(0, items.Length)]) : null;
 		}
 
 		public virtual T GetRandom()

@@ -507,6 +507,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 150372930}
+  - component: {fileID: 150372931}
   m_Layer: 5
   m_Name: GameScreen
   m_TagString: Untagged
@@ -535,6 +536,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &150372931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150372929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58d560ffdef34eee8eb4147d21ffa96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 836509613}
+  timeText: {fileID: 184809306}
+  killsText: {fileID: 20588749}
 --- !u!1 &174697836
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &174697837
 RectTransform:
   m_ObjectHideFlags: 0
@@ -567,10 +582,10 @@ RectTransform:
   m_Father: {fileID: 1920860506}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 105}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 485.33334, y: -512}
+  m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &174697838
 MonoBehaviour:
@@ -610,18 +625,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 174697839}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1736122545}
-        m_MethodName: StartGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &174697839
@@ -1040,6 +1044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 544586600}
   - component: {fileID: 544586602}
+  - component: {fileID: 544586603}
   - component: {fileID: 544586601}
   m_Layer: 5
   m_Name: EndGameScreen
@@ -1102,6 +1107,26 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 544586599}
+--- !u!114 &544586603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 544586599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c75bec986dde54a3d9bf09790a605e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endGameTitle: {fileID: 1181950}
+  levelInfoText: {fileID: 1173989211}
+  levelInfoFormat: 'Session: {0}
+
+
+    Score: {1}
+
+
+    Kills: {2}'
 --- !u!1 &614680991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,8 +1430,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1736122545}
-        m_MethodName: HideInstructions
+      - m_Target: {fileID: 1949153712}
+        m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2016,7 +2041,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1736122545}
+      - m_Target: {fileID: 544586603}
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -2138,7 +2163,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1736122545}
+      - m_Target: {fileID: 150372931}
         m_MethodName: ShowInstructions
         m_Mode: 1
         m_Arguments:
@@ -2371,22 +2396,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 195980130}
-  startScreen: {fileID: 1920860505}
-  instructionsScreen: {fileID: 1949153710}
-  gameScreen: {fileID: 150372929}
-  scoreText: {fileID: 836509613}
-  timeText: {fileID: 184809306}
-  killsText: {fileID: 20588749}
-  endGameScreen: {fileID: 544586599}
-  endGameTitle: {fileID: 1181950}
-  levelInfoText: {fileID: 1173989211}
-  levelInfoFormat: 'Session: {0}
-
-
-    Score: {1}
-
-
-    Kills: {2}'
+  startScreen: {fileID: 1920860510}
+  instructionsScreen: {fileID: 1949153712}
+  gameScreen: {fileID: 150372931}
+  endGameScreen: {fileID: 544586603}
   environment: {fileID: 1599984614}
   groundSample: {fileID: 212743458519175480, guid: 6ba29fc361dce40089a9dffca550777f,
     type: 2}
@@ -2468,7 +2481,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1920860506}
   - component: {fileID: 1920860508}
+  - component: {fileID: 1920860510}
   - component: {fileID: 1920860507}
+  - component: {fileID: 1920860509}
   m_Layer: 5
   m_Name: StartScreen
   m_TagString: Untagged
@@ -2528,6 +2543,41 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1920860505}
+--- !u!114 &1920860509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1920860505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 1
+  m_CellSize: {x: 200, y: 70}
+  m_Spacing: {x: 0, y: 20}
+  m_Constraint: 0
+  m_ConstraintCount: 2
+--- !u!114 &1920860510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1920860505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be34bd81d7735413a97b985e6562c664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankSelectionButton: {fileID: 174697838}
 --- !u!1 &1949153710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2536,6 +2586,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1949153711}
+  - component: {fileID: 1949153712}
   m_Layer: 5
   m_Name: InstructionsScreen
   m_TagString: Untagged
@@ -2563,6 +2614,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1949153712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1949153710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761e0de75aa7542148a72a1c8ada5d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2051384376
 GameObject:
   m_ObjectHideFlags: 0
@@ -2694,7 +2756,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: -20}
+  m_SizeDelta: {x: -40, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2117541744
 MonoBehaviour:
@@ -2719,7 +2781,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: f29875aa594734c7581d768376d2be47, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
@@ -2825,7 +2887,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1736122545}
+      - m_Target: {fileID: 150372931}
         m_MethodName: EndGame
         m_Mode: 1
         m_Arguments:

@@ -27,19 +27,11 @@ namespace Game
 		[SerializeField] Model.Data data;
 
         [Header("UI")]
-        [SerializeField] GameObject startScreen;
-        [SerializeField] GameObject instructionsScreen;
-		[Header(" - Game Screen")]
-        [SerializeField] GameObject gameScreen;
-        [SerializeField] Text scoreText;
-        [SerializeField] Text timeText;
-		[SerializeField] Text killsText;
-		[Header(" - End Game Screen")]
-        [SerializeField] GameObject endGameScreen;
-        [SerializeField] Text endGameTitle;
-        [SerializeField] Text levelInfoText;
-		[TextArea] [SerializeField] string levelInfoFormat;
-        List<GameObject> screens;
+        [SerializeField] UI.StartScreen startScreen;
+        [SerializeField] UI.Screen instructionsScreen;
+        [SerializeField] UI.GameScreen gameScreen;
+        [SerializeField] UI.EndGameScreen endGameScreen;
+        List<UI.Screen> screens;
 
         [Header("Scene")]
 		[SerializeField] Transform environment;
@@ -55,14 +47,18 @@ namespace Game
 
         void Start()
         {
-            screens = new List<GameObject>()
+            screens = new List<UI.Screen>()
 			{
 				startScreen,
 				gameScreen,
 				instructionsScreen,
 				endGameScreen
 			};
-            startScreen.SetActive(true);
+
+            gameScreen.SetData(ShowInstructions, () => EndGame(false));
+            endGameScreen.SetData(RestartGame);
+            startScreen.SetData(Factory.TankFactory.Instance.GetTypes(), (type) => StartGame(type));
+            startScreen.Show();
 
             InitScene();
         }
@@ -75,7 +71,7 @@ namespace Game
 			}
 
 			ProcessTankControls();
-			UpdateGameScreen();
+			gameScreen.SetData(session.score, session.kills, timer);
 
             timer = Mathf.Max(0, timer - Time.deltaTime);
 			if (timer == 0)
@@ -86,12 +82,12 @@ namespace Game
 
         #region UI
 
-        public void StartGame()
+        public void StartGame(System.Type tankType)
         {
-            startScreen.SetActive(false);
-            gameScreen.SetActive(true);
+            startScreen.Hide();
+            gameScreen.Show();
 
-			controllableTank = Factory.TankFactory.Instance.GetRandom();
+			controllableTank = Factory.TankFactory.Instance.GetItem<Tank>(tankType);
 			controllableTank.transform.position = Vector3.zero;
 			controllableTank.transform.eulerAngles = Vector3.zero;
 			controllableTank.SetData(sceneSize);
@@ -123,49 +119,26 @@ namespace Game
 
         public void ShowInstructions()
         {
-            instructionsScreen.SetActive(true);
-        }
-
-        public void HideInstructions()
-        {
-            instructionsScreen.SetActive(false);
+            instructionsScreen.Show();
         }
 
         public void EndGame(bool win)
         {
-            screens.ForEach(s => s.SetActive(false));
-            endGameScreen.SetActive(true);
             Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(null);
-
             EnemySpawner.Instance.Spawning = false;
 			EnemySpawner.Instance.Reset();
-
             game = false;
-
 			data.RegisterSession(session);
 
-            endGameTitle.text = win ? "You Win!" : "You Lose!";
-			if (win)
-			{
-                levelInfoText.text = string.Format(
-                levelInfoFormat,
-                data.Sessions,
-                session.score + (session.score == data.BestScore ? " (best score)" : ""),
-                session.kills + (session.kills == data.MaxKills ? " (best score)" : ""));
-			}
+            screens.ForEach(s => s.Hide());
+            endGameScreen.SetData(win, session.score, session.kills, data.Sessions, data.BestScore, data.MaxKills);
+            endGameScreen.Show();
         }
 
         public void RestartGame()
         {
             SceneManager.LoadScene("Main");
         }
-
-		void UpdateGameScreen()
-		{
-            scoreText.text = string.Format("Score: {0}", session.score);
-            killsText.text = string.Format("Kills: {0}", session.kills);
-            timeText.text = string.Format("Time: {0}", Utils.TimeHelper.GetTime((int)timer));
-		}
 
         #endregion
 
