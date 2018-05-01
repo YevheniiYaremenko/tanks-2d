@@ -62,6 +62,11 @@ namespace Game
 
 		void Update()
 		{
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+
             if (!game)
 			{
 				return;
