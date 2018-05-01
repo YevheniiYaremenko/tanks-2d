@@ -385,7 +385,7 @@ Camera:
   far clip plane: 10
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1679,7 +1679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e332199b1c04ec382580214a8f1dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnCount: 5
+  minSpawnCount: 10
   spawnCenter: {fileID: 925476893}
   spawnRadius: 5
   spawning: 0
@@ -2456,7 +2456,7 @@ MonoBehaviour:
   gameScreen: {fileID: 150372931}
   endGameScreen: {fileID: 544586603}
   sceneBuilder: {fileID: 265175595}
-  sceneSize: 25
+  sceneSize: 35
   timer: 120
 --- !u!4 &1736122546
 Transform:

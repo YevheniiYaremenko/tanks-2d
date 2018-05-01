@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399bac17e06cb40a5b2ee8f56fee10d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 600
+  maxHealth: 400
   defence: 0.5
   sprites:
   - {fileID: 21300012, guid: b4fd1c46c03ae4ca694f5d108fe132e1, type: 3}
@@ -224,7 +224,7 @@ MonoBehaviour:
   healthBar: {fileID: 114269044171681630}
   movementSpeed: 0.5
   rotationSpeed: 50
-  damage: 300
+  damage: 150
   killBonus: 100
 --- !u!114 &114628700615641322
 MonoBehaviour:

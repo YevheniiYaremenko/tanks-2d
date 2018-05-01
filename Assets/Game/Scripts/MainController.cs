@@ -160,10 +160,6 @@ namespace Game
 			{
 				controllableTank.Shoot();
 			}
-            if (Input.GetKey(KeyCode.X))
-            {
-                controllableTank.ShootAutomatically();
-            }
 			else if (Input.GetKeyDown(KeyCode.E))
 			{
                 controllableTank.NextWeapon();
@@ -172,6 +168,10 @@ namespace Game
 			{
                 controllableTank.PreviousWeapon();
 			}
+            if (Input.GetKey(KeyCode.X))
+            {
+                controllableTank.ShootAutomatically();
+            }
 		}
 
 		#endregion

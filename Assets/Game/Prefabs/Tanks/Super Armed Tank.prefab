@@ -428,9 +428,9 @@ MonoBehaviour:
   ui: {fileID: 1828333074876822}
   healthBar: {fileID: 114655948941181648}
   weaponBar: {fileID: 114143440184014776}
-  movementSpeed: 0.8
-  inverseMoveMult: 0.5
-  rotationSpeed: 70
+  movementSpeed: 1
+  inverseMoveMult: 1
+  rotationSpeed: 90
   weaponBases:
   - {fileID: 4560071265054736}
   - {fileID: 4945460792236746}
