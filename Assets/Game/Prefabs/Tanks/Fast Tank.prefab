@@ -196,7 +196,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.31, y: 2.05}
+    oldSize: {x: 1.32, y: 2.04}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -334,6 +334,7 @@ MonoBehaviour:
   availableWeapons:
   - {fileID: 114150611384174424, guid: bb056cc9cdbfe4d33ba4f587d89323a2, type: 2}
   - {fileID: 114908344328928262, guid: 1c5219f685c744a159ce8ef539fa5e0d, type: 2}
+  - {fileID: 114791783777090406, guid: 5e1b5b75569994adb9f44edfe45de9ab, type: 2}
 --- !u!114 &114466022592263228
 MonoBehaviour:
   m_ObjectHideFlags: 1

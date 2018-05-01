@@ -31,7 +31,7 @@ namespace Game
 
         void Update()
 		{
-			weaponBar.transform.parent.gameObject.SetActive(installedWeapons[0] != null && installedWeapons[0].ReloadingProgress < 1);
+			weaponBar.transform.parent.gameObject.SetActive(installedWeapons[0] != null && installedWeapons[0].ReloadingProgress < 1 && installedWeapons[0].ReloadingDuration >= 1);
 			if (installedWeapons[0] != null)
 			{
 				weaponBar.fillAmount = installedWeapons[0].ReloadingProgress;
@@ -85,6 +85,17 @@ namespace Game
                     weapon.Shoot();
                 }
 			}
+		}
+
+		public void ShootAutomatically()
+		{
+            foreach (var weapon in installedWeapons)
+            {
+                if (weapon != null && weapon.Automatic)
+                {
+                    weapon.Shoot();
+                }
+            }
 		}
 
 		#endregion

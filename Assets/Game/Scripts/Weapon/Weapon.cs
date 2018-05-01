@@ -15,7 +15,9 @@ namespace Game
 
       protected float lastReloadTime = 0;
 
-      public float ReloadingProgress { get { return Mathf.Clamp01((Time.time - lastReloadTime) / reloadDuration);} }
+      public float ReloadingProgress { get { return Mathf.Clamp01((Time.time - lastReloadTime) / reloadDuration); } }
+      public float ReloadingDuration { get { return reloadDuration; } }
+      public virtual bool Automatic { get { return false; } }
 
         void Awake()
         {
