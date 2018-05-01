@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 212491277160176590}
   - component: {fileID: 60905344414838172}
   - component: {fileID: 50787476442039890}
-  - component: {fileID: 114162554549899456}
+  - component: {fileID: 114292458794083558}
   m_Layer: 0
   m_Name: Simple Tank
   m_TagString: Untagged
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114162554549899456
+--- !u!114 &114292458794083558
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1797036652897206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea77bb0a3187648e983f86e2693550f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 99f9422ac3af74372b4d48a27a1c52e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 900
@@ -270,8 +270,8 @@ MonoBehaviour:
   - {fileID: 4610483458774000}
   availableWeapons:
   - {fileID: 114150611384174424, guid: bb056cc9cdbfe4d33ba4f587d89323a2, type: 2}
-  - {fileID: 114481924391108080, guid: 0fa3466c9a6a5440aab3a42dc83d59ae, type: 2}
   - {fileID: 114908344328928262, guid: 1c5219f685c744a159ce8ef539fa5e0d, type: 2}
+  - {fileID: 114481924391108080, guid: 0fa3466c9a6a5440aab3a42dc83d59ae, type: 2}
 --- !u!114 &114332891349650082
 MonoBehaviour:
   m_ObjectHideFlags: 1

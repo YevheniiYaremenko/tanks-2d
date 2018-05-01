@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Game
 {
-    public class Tank : DamagingObject, IDamaging, IMovable
+    public abstract class Tank : DamagingObject, IDamaging, IMovable
     {
         [SerializeField] Image weaponBar;
 

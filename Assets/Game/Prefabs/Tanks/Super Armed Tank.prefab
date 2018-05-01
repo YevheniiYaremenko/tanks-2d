@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 212356082571932768}
   - component: {fileID: 60246098934055698}
   - component: {fileID: 50520771465157228}
-  - component: {fileID: 114322252742244036}
+  - component: {fileID: 114833667131650172}
   m_Layer: 0
   m_Name: Super Armed Tank
   m_TagString: Untagged
@@ -316,36 +316,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114322252742244036
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1738385040548856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea77bb0a3187648e983f86e2693550f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 1000
-  defence: 0.5
-  sprites: []
-  explosionEffect: {fileID: 1714890923670812, guid: 855391860ca114443ad5e45290086a2b,
-    type: 2}
-  deathSprite: {fileID: 0}
-  ui: {fileID: 1828333074876822}
-  healthBar: {fileID: 114655948941181648}
-  weaponBar: {fileID: 114143440184014776}
-  movementSpeed: 0.8
-  inverseMoveMult: 0.5
-  rotationSpeed: 70
-  weaponBases:
-  - {fileID: 4560071265054736}
-  - {fileID: 4945460792236746}
-  availableWeapons:
-  - {fileID: 114150611384174424, guid: bb056cc9cdbfe4d33ba4f587d89323a2, type: 2}
-  - {fileID: 114481924391108080, guid: 0fa3466c9a6a5440aab3a42dc83d59ae, type: 2}
-  - {fileID: 114908344328928262, guid: 1c5219f685c744a159ce8ef539fa5e0d, type: 2}
 --- !u!114 &114595473344938996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -438,6 +408,35 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114833667131650172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738385040548856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa525177e031441eade6d29cb1cbc81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1000
+  defence: 0.5
+  sprites: []
+  explosionEffect: {fileID: 1714890923670812, guid: 855391860ca114443ad5e45290086a2b,
+    type: 2}
+  deathSprite: {fileID: 0}
+  ui: {fileID: 1828333074876822}
+  healthBar: {fileID: 114655948941181648}
+  weaponBar: {fileID: 114143440184014776}
+  movementSpeed: 0.8
+  inverseMoveMult: 0.5
+  rotationSpeed: 70
+  weaponBases:
+  - {fileID: 4560071265054736}
+  - {fileID: 4945460792236746}
+  availableWeapons:
+  - {fileID: 114150611384174424, guid: bb056cc9cdbfe4d33ba4f587d89323a2, type: 2}
+  - {fileID: 114908344328928262, guid: 1c5219f685c744a159ce8ef539fa5e0d, type: 2}
 --- !u!212 &212356082571932768
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 212339798338136674}
   - component: {fileID: 60191322677098474}
   - component: {fileID: 50446317546223792}
-  - component: {fileID: 114399610091864874}
+  - component: {fileID: 114442210701749550}
   m_Layer: 0
   m_Name: Fast Tank
   m_TagString: Untagged
@@ -151,7 +151,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1245187869383012}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114399610091864874
+--- !u!114 &114442210701749550
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1245187869383012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea77bb0a3187648e983f86e2693550f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 564ed1bf8fc484aa2a7dc7a004fd4692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 800
@@ -333,7 +333,6 @@ MonoBehaviour:
   - {fileID: 4186371424450620}
   availableWeapons:
   - {fileID: 114150611384174424, guid: bb056cc9cdbfe4d33ba4f587d89323a2, type: 2}
-  - {fileID: 114481924391108080, guid: 0fa3466c9a6a5440aab3a42dc83d59ae, type: 2}
   - {fileID: 114908344328928262, guid: 1c5219f685c744a159ce8ef539fa5e0d, type: 2}
 --- !u!114 &114466022592263228
 MonoBehaviour:

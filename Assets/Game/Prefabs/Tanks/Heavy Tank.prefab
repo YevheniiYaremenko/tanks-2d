@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212403331141219148}
   - component: {fileID: 60007528590652914}
   - component: {fileID: 50256605580161284}
-  - component: {fileID: 114073219946630406}
+  - component: {fileID: 114604717819527862}
   m_Layer: 0
   m_Name: Heavy Tank
   m_TagString: Untagged
@@ -219,35 +219,6 @@ PolygonCollider2D:
       - {x: 0.07, y: -0.76}
       - {x: 0.29, y: -0.87}
       - {x: 0.51, y: -0.87}
---- !u!114 &114073219946630406
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1150042539047584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea77bb0a3187648e983f86e2693550f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 1000
-  defence: 0.5
-  sprites: []
-  explosionEffect: {fileID: 1714890923670812, guid: 855391860ca114443ad5e45290086a2b,
-    type: 2}
-  deathSprite: {fileID: 0}
-  ui: {fileID: 1659755637830154}
-  healthBar: {fileID: 114252070490185070}
-  weaponBar: {fileID: 114596163800580508}
-  movementSpeed: 1
-  inverseMoveMult: 0.5
-  rotationSpeed: 80
-  weaponBases:
-  - {fileID: 4734820988834196}
-  availableWeapons:
-  - {fileID: 114150611384174424, guid: bb056cc9cdbfe4d33ba4f587d89323a2, type: 2}
-  - {fileID: 114481924391108080, guid: 0fa3466c9a6a5440aab3a42dc83d59ae, type: 2}
-  - {fileID: 114908344328928262, guid: 1c5219f685c744a159ce8ef539fa5e0d, type: 2}
 --- !u!114 &114212424418764868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -388,6 +359,35 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114604717819527862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1150042539047584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58a9ad4a7b364d06b20ecec58914c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1000
+  defence: 0.5
+  sprites: []
+  explosionEffect: {fileID: 1714890923670812, guid: 855391860ca114443ad5e45290086a2b,
+    type: 2}
+  deathSprite: {fileID: 0}
+  ui: {fileID: 1659755637830154}
+  healthBar: {fileID: 114252070490185070}
+  weaponBar: {fileID: 114596163800580508}
+  movementSpeed: 1
+  inverseMoveMult: 0.5
+  rotationSpeed: 80
+  weaponBases:
+  - {fileID: 4734820988834196}
+  availableWeapons:
+  - {fileID: 114150611384174424, guid: bb056cc9cdbfe4d33ba4f587d89323a2, type: 2}
+  - {fileID: 114481924391108080, guid: 0fa3466c9a6a5440aab3a42dc83d59ae, type: 2}
+  - {fileID: 114908344328928262, guid: 1c5219f685c744a159ce8ef539fa5e0d, type: 2}
 --- !u!114 &114738089942350436
 MonoBehaviour:
   m_ObjectHideFlags: 1
