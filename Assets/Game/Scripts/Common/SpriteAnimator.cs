@@ -15,6 +15,7 @@ namespace Game.Utils
     {
 		[SerializeField] AnimatedSprite[] animations;
 		[SerializeField] float fps = 10;
+		[SerializeField] float startDelay = 0;
 		[SerializeField] bool playOnAwake = true;
 		[SerializeField] bool loop;
 		[SerializeField] bool autoDestroy;
@@ -28,10 +29,6 @@ namespace Game.Utils
 		void Awake()
 		{
             renderer = GetComponent<SpriteRenderer>();
-			if (playOnAwake)
-			{
-				Play();
-			}
 		}
 
 		public void Play()
@@ -46,6 +43,15 @@ namespace Game.Utils
 
 		void Update()
 		{
+            if (playOnAwake && startDelay > 0)
+            {
+                startDelay -= Time.deltaTime;
+            }
+			else if (playOnAwake && !isPlaying)
+			{
+                Play();
+			}
+
 			if (!isPlaying || Time.time < lastFrameTime + 1 / fps)
 			{
 				return;

@@ -235,7 +235,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300012, guid: ded7b85f06a3e479ba95639c9267748b, type: 3}
   - {fileID: 21300014, guid: ded7b85f06a3e479ba95639c9267748b, type: 3}
-  explosionEffect: {fileID: 1714890923670812, guid: d3030446ae5f04cf8928b136407e0968,
+  explosionEffect: {fileID: 1714890923670812, guid: 0174ae7d04bf14d7a8f3b29267091859,
     type: 2}
   deathSprite: {fileID: 21300016, guid: ded7b85f06a3e479ba95639c9267748b, type: 3}
   ui: {fileID: 1237060473667534}

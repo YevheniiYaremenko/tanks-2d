@@ -196,7 +196,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.34, y: 1.74}
+    oldSize: {x: 1.36, y: 1.74}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -373,7 +373,7 @@ MonoBehaviour:
   maxHealth: 1000
   defence: 0.5
   sprites: []
-  explosionEffect: {fileID: 1714890923670812, guid: 855391860ca114443ad5e45290086a2b,
+  explosionEffect: {fileID: 1085730771049548, guid: 13b8b1276236341f4abfecdfd7bbd2d4,
     type: 2}
   deathSprite: {fileID: 0}
   ui: {fileID: 1659755637830154}
