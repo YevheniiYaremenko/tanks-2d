@@ -80,7 +80,7 @@ namespace Game
             timer = Mathf.Max(0, timer - Time.deltaTime);
 			if (timer == 0)
 			{
-				EndGame();
+				EndGame(true);
 			}
         }
 
@@ -95,7 +95,7 @@ namespace Game
 			controllableTank.transform.position = Vector3.zero;
 			controllableTank.transform.eulerAngles = Vector3.zero;
 			controllableTank.SetData(sceneSize);
-			controllableTank.onDeath += (killing) => EndGame();
+			controllableTank.onDeath += (killing) => EndGame(false);
 
 			Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(controllableTank.transform);
 
@@ -131,7 +131,7 @@ namespace Game
             instructionsScreen.SetActive(false);
         }
 
-        public void EndGame()
+        public void EndGame(bool win)
         {
             screens.ForEach(s => s.SetActive(false));
             endGameScreen.SetActive(true);
@@ -144,8 +144,8 @@ namespace Game
 
 			data.RegisterSession(session);
 
-            endGameTitle.text = controllableTank == null ? "You Lose!" : "You Win!";
-			if (controllableTank != null)
+            endGameTitle.text = win ? "You Win!" : "You Lose!";
+			if (win)
 			{
                 levelInfoText.text = string.Format(
                 levelInfoFormat,
