@@ -13,11 +13,10 @@ namespace Game
 
         public void BuildScene(int sceneSize)
         {
-            var visibleSceneSize = sceneSize + 10;
-            var groundOffset = -visibleSceneSize / 2f + .5f;
-            for (int i = 0; i < visibleSceneSize; i++)
+            var groundOffset = -sceneSize / 2f + .5f;
+            for (int i = 0; i < sceneSize; i++)
             {
-                for (int j = 0; j < visibleSceneSize; j++)
+                for (int j = 0; j < sceneSize; j++)
                 {
                     Instantiate(
                         groundSample,
