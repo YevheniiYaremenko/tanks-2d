@@ -884,6 +884,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e265880dc10264c04955a182edea9fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &265175594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 265175596}
+  - component: {fileID: 265175595}
+  m_Layer: 0
+  m_Name: Scene Builder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &265175595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 265175594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43020a4fe9a6d4bc58c95a4f1142c96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  environment: {fileID: 1599984614}
+  groundSample: {fileID: 212743458519175480, guid: 6ba29fc361dce40089a9dffca550777f,
+    type: 2}
+  groundSprites:
+  - {fileID: 21300000, guid: 95b12a6189b3d493a9b3044f25b0f28b, type: 3}
+  - {fileID: 21300000, guid: 1030668f4dd514b5c9c06ab57a31bd74, type: 3}
+  - {fileID: 21300000, guid: a904694b3e7d74a5a95f2144258c06fa, type: 3}
+  - {fileID: 21300000, guid: c907813f6cab94c45be06a786b7ac93c, type: 3}
+  - {fileID: 21300000, guid: 4bc4da51325e34b25806eb616019798a, type: 3}
+  - {fileID: 21300000, guid: 8db2d661ad16f4245be12694d478c530, type: 3}
+  sceneBounds:
+  - {fileID: 614680992}
+  - {fileID: 112475880}
+  - {fileID: 1047086559}
+  - {fileID: 1247327044}
+--- !u!4 &265175596
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 265175594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1736122546}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &274477381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2400,21 +2455,7 @@ MonoBehaviour:
   instructionsScreen: {fileID: 1949153712}
   gameScreen: {fileID: 150372931}
   endGameScreen: {fileID: 544586603}
-  environment: {fileID: 1599984614}
-  groundSample: {fileID: 212743458519175480, guid: 6ba29fc361dce40089a9dffca550777f,
-    type: 2}
-  groundSprites:
-  - {fileID: 21300000, guid: 95b12a6189b3d493a9b3044f25b0f28b, type: 3}
-  - {fileID: 21300000, guid: 1030668f4dd514b5c9c06ab57a31bd74, type: 3}
-  - {fileID: 21300000, guid: a904694b3e7d74a5a95f2144258c06fa, type: 3}
-  - {fileID: 21300000, guid: c907813f6cab94c45be06a786b7ac93c, type: 3}
-  - {fileID: 21300000, guid: 4bc4da51325e34b25806eb616019798a, type: 3}
-  - {fileID: 21300000, guid: 8db2d661ad16f4245be12694d478c530, type: 3}
-  sceneBounds:
-  - {fileID: 614680992}
-  - {fileID: 112475880}
-  - {fileID: 1047086559}
-  - {fileID: 1247327044}
+  sceneBuilder: {fileID: 265175595}
   sceneSize: 25
   timer: 120
 --- !u!4 &1736122546
@@ -2428,6 +2469,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 195980129}
+  - {fileID: 265175596}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

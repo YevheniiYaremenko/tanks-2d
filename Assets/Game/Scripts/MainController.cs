@@ -34,10 +34,7 @@ namespace Game
         List<UI.Screen> screens;
 
         [Header("Scene")]
-		[SerializeField] Transform environment;
-        [SerializeField] SpriteRenderer groundSample;
-		[SerializeField] Sprite[] groundSprites;
-        [SerializeField] Transform[] sceneBounds;
+        [SerializeField] SceneBuilder sceneBuilder;
         [Range(5, 50)] [SerializeField] int sceneSize = 10;
 		[SerializeField] float timer = 120;
 
@@ -60,7 +57,7 @@ namespace Game
             startScreen.SetData(Factory.TankFactory.Instance.GetTypes(), (type) => StartGame(type));
             startScreen.Show();
 
-            InitScene();
+            sceneBuilder.BuildScene(sceneSize);
         }
 
 		void Update()
@@ -144,33 +141,7 @@ namespace Game
 
         #region Level
 
-        void InitScene()
-        {
-			var visibleSceneSize = sceneSize + 10;
-			var groundOffset = - visibleSceneSize / 2f + .5f;
-			for (int i = 0; i < visibleSceneSize; i++)
-			{
-				for (int j = 0; j < visibleSceneSize; j++)
-				{
-					Instantiate(
-                        groundSample, 
-						new Vector2(i + groundOffset, j + groundOffset),
-						Quaternion.identity,
-						environment)
-						.sprite = groundSprites[Random.Range(0, groundSprites.Length)];
-				}
-			}
-
-			var lineWidth = .1f;
-            sceneBounds[0].position = Vector2.up * sceneSize / 2f;
-            sceneBounds[0].localScale = new Vector2(sceneSize + lineWidth, lineWidth);
-            sceneBounds[1].position = Vector2.down * sceneSize / 2f;
-            sceneBounds[1].localScale = new Vector2(sceneSize + lineWidth, lineWidth);
-            sceneBounds[2].position = Vector2.left * sceneSize / 2f;
-            sceneBounds[2].localScale = new Vector2(lineWidth, sceneSize + lineWidth);
-            sceneBounds[3].position = Vector2.right * sceneSize / 2f;
-            sceneBounds[3].localScale = new Vector2(lineWidth, sceneSize + lineWidth);
-        }
+        
 
         #endregion
 
