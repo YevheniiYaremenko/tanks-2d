@@ -1,0 +1,513 @@
+fileFormatVersion: 2
+guid: 62266c3a8b2e441f3b3e5be9693014a5
+timeCreated: 1527890125
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: units
+    21300002: car_1_0
+    21300004: car_1_1
+    21300006: car_1_2
+    21300008: car_2_0
+    21300010: car_2_1
+    21300012: car_2_2
+    21300014: car_3_0
+    21300016: car_3_1
+    21300018: car_3_2
+    21300020: car_4_0
+    21300022: car_4_1
+    21300024: car_4_2
+    21300026: car_5_0
+    21300028: car_5_1
+    21300030: car_5_2
+    21300032: car_6_0
+    21300034: car_6_1
+    21300036: car_6_2
+    21300038: car_7_0
+    21300040: car_7_1
+    21300042: car_7_2
+    21300044: tank_fast
+    21300046: tank_heavy
+    21300048: tank_simple
+    21300050: tank_super_armed
+    21300052: weapon_1
+    21300054: weapon_2
+    21300056: weapon_3
+    21300058: weapon_4
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: car_1_0
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 140
+        width: 38
+        height: 42
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.54761904}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_1_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 159
+        width: 34
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5294118, y: 0.5116279}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_1_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 141
+        width: 35
+        height: 41
+      alignment: 9
+      pivot: {x: 0.47142857, y: 0.5365854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_2_0
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 84
+        width: 36
+        height: 56
+      alignment: 9
+      pivot: {x: 0.4861111, y: 0.48214287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_2_1
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 140
+        width: 37
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5135135, y: 0.46551725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_2_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 150
+        width: 31
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5322581, y: 0.46153846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_3_0
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 182
+        width: 38
+        height: 62
+      alignment: 9
+      pivot: {x: 0.4868421, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_3_1
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 182
+        width: 38
+        height: 62
+      alignment: 9
+      pivot: {x: 0.5, y: 0.516129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_3_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 202
+        width: 41
+        height: 63
+      alignment: 9
+      pivot: {x: 0.5243902, y: 0.50793654}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_4_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 202
+        width: 40
+        height: 70
+      alignment: 9
+      pivot: {x: 0.5125, y: 0.47142857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_4_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 145
+        width: 34
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5588235, y: 0.45614034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_4_2
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 134
+        width: 36
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4861111, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_5_0
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 438
+        width: 51
+        height: 74
+      alignment: 9
+      pivot: {x: 0.44117647, y: 0.4864865}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_5_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 364
+        width: 51
+        height: 74
+      alignment: 9
+      pivot: {x: 0.50980395, y: 0.4864865}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_5_2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 280
+        width: 59
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5677966, y: 0.48809522}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_6_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 50
+        height: 69
+      alignment: 9
+      pivot: {x: 0.55, y: 0.4710145}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_6_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 265
+        width: 50
+        height: 69
+      alignment: 9
+      pivot: {x: 0.52, y: 0.45652175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_6_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 341
+        width: 51
+        height: 69
+      alignment: 9
+      pivot: {x: 0.51960784, y: 0.45652175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_7_0
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 335
+        width: 62
+        height: 91
+      alignment: 9
+      pivot: {x: 0.5241935, y: 0.46153846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_7_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 334
+        width: 62
+        height: 91
+      alignment: 9
+      pivot: {x: 0.48387095, y: 0.46153846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: car_7_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 244
+        width: 62
+        height: 91
+      alignment: 9
+      pivot: {x: 0.4919355, y: 0.46153846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tank_fast
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 410
+        width: 66
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tank_heavy
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 425
+        width: 68
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tank_simple
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 426
+        width: 66
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tank_super_armed
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 198
+        width: 66
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: weapon_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 296
+        width: 16
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: weapon_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 270
+        width: 16
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: weapon_3
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 250
+        width: 18
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: weapon_4
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 365
+        width: 11
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

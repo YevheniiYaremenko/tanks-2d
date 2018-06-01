@@ -52,9 +52,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4388029536241644}
   - component: {fileID: 212356082571932768}
-  - component: {fileID: 60246098934055698}
   - component: {fileID: 50520771465157228}
   - component: {fileID: 114833667131650172}
+  - component: {fileID: 60557870441455896}
   m_Layer: 0
   m_Name: Super Armed Tank
   m_TagString: Untagged
@@ -155,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 1738385040548856}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4560071265054736}
   - {fileID: 4945460792236746}
@@ -170,7 +170,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1812522460863266}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.277, y: 0.111, z: 0}
+  m_LocalPosition: {x: 0.14, y: 0.049, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4388029536241644}
@@ -183,7 +183,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1554181535687582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.277, y: 0.111, z: 0}
+  m_LocalPosition: {x: -0.14, y: 0.051, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4388029536241644}
@@ -209,7 +209,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60246098934055698
+--- !u!60 &60557870441455896
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -225,7 +225,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.32, y: 1.64}
+    oldSize: {x: 0.66, y: 0.82}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -233,25 +233,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.65999997, y: -0.73499995}
-      - {x: 0.65999997, y: -0.375}
-      - {x: 0.63, y: -0.345}
-      - {x: 0.63, y: 0.765}
-      - {x: 0.59, y: 0.825}
-      - {x: 0.19999999, y: 0.825}
-      - {x: 0.14999999, y: 0.765}
-      - {x: -0.13, y: 0.60499996}
-      - {x: -0.16, y: 0.765}
-      - {x: -0.22, y: 0.825}
-      - {x: -0.59999996, y: 0.825}
-      - {x: -0.63, y: 0.765}
-      - {x: -0.65999997, y: -0.385}
-      - {x: -0.65999997, y: -0.645}
-      - {x: -0.59999996, y: -0.825}
-      - {x: -0.17999999, y: -0.825}
-      - {x: -0.099999994, y: -0.765}
-      - {x: 0.19, y: -0.825}
-      - {x: 0.61, y: -0.825}
+    - - {x: -0.31, y: 0.41}
+      - {x: -0.32, y: 0.38}
+      - {x: -0.32999998, y: 0.21}
+      - {x: -0.32999998, y: -0.39999998}
+      - {x: -0.32, y: -0.41}
+      - {x: 0.32, y: -0.41}
+      - {x: 0.32999998, y: -0.39}
+      - {x: 0.32999998, y: 0.41}
 --- !u!114 &114002696218290458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -472,7 +461,7 @@ SpriteRenderer:
   m_SortingLayerID: 528954473
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7ae1633d8f7404a79a1350d9e07f7cd9, type: 3}
+  m_Sprite: {fileID: 21300050, guid: 62266c3a8b2e441f3b3e5be9693014a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -534,7 +523,7 @@ RectTransform:
   m_GameObject: {fileID: 1828333074876822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children:
   - {fileID: 224728777765889662}
   - {fileID: 224727789754247854}

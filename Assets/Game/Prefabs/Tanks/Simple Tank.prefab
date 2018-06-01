@@ -103,9 +103,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4217771451791408}
   - component: {fileID: 212491277160176590}
-  - component: {fileID: 60905344414838172}
   - component: {fileID: 50787476442039890}
   - component: {fileID: 114292458794083558}
+  - component: {fileID: 60508185218825906}
   m_Layer: 0
   m_Name: Simple Tank
   m_TagString: Untagged
@@ -140,7 +140,7 @@ Transform:
   m_GameObject: {fileID: 1797036652897206}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4610483458774000}
   - {fileID: 224164162238168230}
@@ -180,7 +180,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60905344414838172
+--- !u!60 &60508185218825906
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -196,7 +196,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.32, y: 1.72}
+    oldSize: {x: 0.66, y: 0.86}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -204,18 +204,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.65, y: 0.85499996}
-      - {x: 0.31, y: 0.85499996}
-      - {x: 0.22, y: 0.835}
-      - {x: -0.25, y: 0.625}
-      - {x: -0.29, y: 0.85499996}
-      - {x: -0.63, y: 0.85499996}
-      - {x: -0.65999997, y: 0.815}
-      - {x: -0.65999997, y: -0.825}
-      - {x: -0.61, y: -0.85499996}
-      - {x: 0.63, y: -0.85499996}
-      - {x: 0.65999997, y: -0.805}
-      - {x: 0.65999997, y: 0.835}
+    - - {x: -0.32999998, y: 0.42999998}
+      - {x: -0.32999998, y: -0.42999998}
+      - {x: 0.32999998, y: -0.42999998}
+      - {x: 0.32999998, y: 0.42999998}
 --- !u!114 &114067620830682160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -436,7 +428,7 @@ SpriteRenderer:
   m_SortingLayerID: 528954473
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9422b43bab65c41e893db54dff2d9e72, type: 3}
+  m_Sprite: {fileID: 21300048, guid: 62266c3a8b2e441f3b3e5be9693014a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -498,7 +490,7 @@ RectTransform:
   m_GameObject: {fileID: 1912606130306440}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children:
   - {fileID: 224611343666026330}
   - {fileID: 224780445878801278}

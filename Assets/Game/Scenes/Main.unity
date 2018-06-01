@@ -915,12 +915,12 @@ MonoBehaviour:
   groundSample: {fileID: 212743458519175480, guid: 6ba29fc361dce40089a9dffca550777f,
     type: 2}
   groundSprites:
-  - {fileID: 21300000, guid: 95b12a6189b3d493a9b3044f25b0f28b, type: 3}
-  - {fileID: 21300000, guid: 1030668f4dd514b5c9c06ab57a31bd74, type: 3}
-  - {fileID: 21300000, guid: a904694b3e7d74a5a95f2144258c06fa, type: 3}
-  - {fileID: 21300000, guid: c907813f6cab94c45be06a786b7ac93c, type: 3}
-  - {fileID: 21300000, guid: 4bc4da51325e34b25806eb616019798a, type: 3}
-  - {fileID: 21300000, guid: 8db2d661ad16f4245be12694d478c530, type: 3}
+  - {fileID: 21300002, guid: 5334f54d40ae1483fa08efdc809792a4, type: 3}
+  - {fileID: 21300004, guid: 5334f54d40ae1483fa08efdc809792a4, type: 3}
+  - {fileID: 21300006, guid: 5334f54d40ae1483fa08efdc809792a4, type: 3}
+  - {fileID: 21300008, guid: 5334f54d40ae1483fa08efdc809792a4, type: 3}
+  - {fileID: 21300010, guid: 5334f54d40ae1483fa08efdc809792a4, type: 3}
+  - {fileID: 21300012, guid: 5334f54d40ae1483fa08efdc809792a4, type: 3}
   sceneBounds:
   - {fileID: 614680992}
   - {fileID: 112475880}

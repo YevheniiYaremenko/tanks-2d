@@ -112,8 +112,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.82666665, y: 1.0566666}
-    newSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.51, y: 0.74}
+    newSize: {x: 0.51, y: 0.74}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -148,11 +148,11 @@ MonoBehaviour:
   maxHealth: 150
   defence: 0.3
   sprites:
-  - {fileID: 21300000, guid: b4fd1c46c03ae4ca694f5d108fe132e1, type: 3}
-  - {fileID: 21300002, guid: b4fd1c46c03ae4ca694f5d108fe132e1, type: 3}
+  - {fileID: 21300026, guid: 62266c3a8b2e441f3b3e5be9693014a5, type: 3}
+  - {fileID: 21300028, guid: 62266c3a8b2e441f3b3e5be9693014a5, type: 3}
   explosionEffect: {fileID: 1714890923670812, guid: 0174ae7d04bf14d7a8f3b29267091859,
     type: 2}
-  deathSprite: {fileID: 21300004, guid: b4fd1c46c03ae4ca694f5d108fe132e1, type: 3}
+  deathSprite: {fileID: 21300030, guid: 62266c3a8b2e441f3b3e5be9693014a5, type: 3}
   ui: {fileID: 1600424260365506}
   healthBar: {fileID: 114607073736143252}
   movementSpeed: 1
@@ -295,12 +295,12 @@ SpriteRenderer:
   m_SortingLayerID: -399576941
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b4fd1c46c03ae4ca694f5d108fe132e1, type: 3}
+  m_Sprite: {fileID: 21300026, guid: 62266c3a8b2e441f3b3e5be9693014a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.51, y: 0.74}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

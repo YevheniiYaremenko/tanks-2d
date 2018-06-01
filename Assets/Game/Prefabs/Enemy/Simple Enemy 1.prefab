@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4479112662406254}
   - component: {fileID: 212331163016309574}
   - component: {fileID: 114018894651562130}
-  - component: {fileID: 60600520619888892}
+  - component: {fileID: 60844979232789334}
   m_Layer: 0
   m_Name: Simple Enemy 1
   m_TagString: Untagged
@@ -96,7 +96,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60600520619888892
+--- !u!60 &60844979232789334
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -112,23 +112,23 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.74666667, y: 0.9}
-    newSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.38, y: 0.42}
+    newSize: {x: 0.38, y: 0.42}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.044999998, y: 0.19}
-      - {x: -0.105, y: 0.17999999}
-      - {x: -0.175, y: 0.14}
-      - {x: -0.175, y: -0.17}
-      - {x: -0.13499999, y: -0.24}
-      - {x: 0.16499999, y: -0.24}
-      - {x: 0.185, y: -0.22}
-      - {x: 0.185, y: 0.14999999}
-      - {x: 0.114999995, y: 0.19}
+    - - {x: -0.049999997, y: 0.21}
+      - {x: -0.11, y: 0.19999999}
+      - {x: -0.17999999, y: 0.16}
+      - {x: -0.17999999, y: -0.14999999}
+      - {x: -0.14, y: -0.21}
+      - {x: 0.17, y: -0.21}
+      - {x: 0.17999999, y: -0.19999999}
+      - {x: 0.17999999, y: 0.17}
+      - {x: 0.11, y: 0.21}
 --- !u!114 &114018894651562130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,11 +143,11 @@ MonoBehaviour:
   maxHealth: 60
   defence: 0.1
   sprites:
-  - {fileID: 21300000, guid: ded7b85f06a3e479ba95639c9267748b, type: 3}
-  - {fileID: 21300002, guid: ded7b85f06a3e479ba95639c9267748b, type: 3}
+  - {fileID: 21300002, guid: 62266c3a8b2e441f3b3e5be9693014a5, type: 3}
+  - {fileID: 21300004, guid: 62266c3a8b2e441f3b3e5be9693014a5, type: 3}
   explosionEffect: {fileID: 1714890923670812, guid: d3030446ae5f04cf8928b136407e0968,
     type: 2}
-  deathSprite: {fileID: 21300004, guid: ded7b85f06a3e479ba95639c9267748b, type: 3}
+  deathSprite: {fileID: 21300006, guid: 62266c3a8b2e441f3b3e5be9693014a5, type: 3}
   ui: {fileID: 1355814664306042}
   healthBar: {fileID: 114145279885189460}
   movementSpeed: 3
@@ -290,12 +290,12 @@ SpriteRenderer:
   m_SortingLayerID: -399576941
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: ded7b85f06a3e479ba95639c9267748b, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 62266c3a8b2e441f3b3e5be9693014a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.38, y: 0.42}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
