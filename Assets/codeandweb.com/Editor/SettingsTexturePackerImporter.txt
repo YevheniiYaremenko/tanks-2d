@@ -1,9 +1,6 @@
 version: 2
 importPivots: 1
 tpsheetFileNames:
-- Assets/Game/Textures/Units/units.tpsheet
 textureFileNames:
-- Assets/Game/Textures/Units/units.png
 normalmapFileNames:
-- 
 enableDebugOutput: 0
