@@ -7,6 +7,9 @@ namespace Game
 {
 	public class Firearm : Weapon
 	{
+		[SerializeField] bool automatic = false;
+        public override bool Automatic { get { return automatic; } }
+
 		public override void Shoot()
 		{
             if (lastReloadTime + reloadDuration > Time.time)
@@ -15,8 +18,8 @@ namespace Game
             }
             base.Shoot();
 			
-			var hit = Physics2D.RaycastAll(startShootPoint.position, startShootPoint.up)
-				.Where(h => h.collider.GetComponent<Tank>() == null)
+			int layerMask = 1 << 8 | 1 << 11; //cast only obstacle and enemy layers
+			var hit = Physics2D.RaycastAll(startShootPoint.position, startShootPoint.up, Mathf.Infinity, layerMask)
 				.OrderBy(h => h.distance)
 				.FirstOrDefault();
 			if (hit)

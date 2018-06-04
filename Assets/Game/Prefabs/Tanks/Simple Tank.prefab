@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4610483458774000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,11 +102,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4217771451791408}
+  - component: {fileID: 114292458794083558}
   - component: {fileID: 212491277160176590}
   - component: {fileID: 50787476442039890}
-  - component: {fileID: 114292458794083558}
-  - component: {fileID: 60508185218825906}
-  m_Layer: 0
+  - component: {fileID: 61349833432786366}
+  m_Layer: 10
   m_Name: Simple Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,21 +167,21 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1797036652897206}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_Mass: 100
+  m_LinearDrag: 100
+  m_AngularDrag: 100
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60508185218825906
-PolygonCollider2D:
+--- !u!61 &61349833432786366
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -189,7 +189,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -202,12 +202,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.32999998, y: 0.42999998}
-      - {x: -0.32999998, y: -0.42999998}
-      - {x: 0.32999998, y: -0.42999998}
-      - {x: 0.32999998, y: 0.42999998}
+  serializedVersion: 2
+  m_Size: {x: 0.66, y: 0.86}
+  m_EdgeRadius: 0
 --- !u!114 &114067620830682160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -264,7 +261,7 @@ MonoBehaviour:
   - {fileID: 114150611384174424, guid: bb056cc9cdbfe4d33ba4f587d89323a2, type: 2}
   - {fileID: 114908344328928262, guid: 1c5219f685c744a159ce8ef539fa5e0d, type: 2}
   - {fileID: 114481924391108080, guid: 0fa3466c9a6a5440aab3a42dc83d59ae, type: 2}
-  - {fileID: 114791783777090406, guid: 5e1b5b75569994adb9f44edfe45de9ab, type: 2}
+  - {fileID: 114191060741055508, guid: 5e1b5b75569994adb9f44edfe45de9ab, type: 2}
 --- !u!114 &114332891349650082
 MonoBehaviour:
   m_ObjectHideFlags: 1

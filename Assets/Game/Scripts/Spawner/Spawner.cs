@@ -19,8 +19,7 @@ namespace Game.Spawner
 			}
 		}
 		[SerializeField] protected int minSpawnCount = 10;
-		[SerializeField] protected Transform spawnCenter;
-		[SerializeField] protected float spawnRadius;
+		[SerializeField] protected Transform[] spawnPoints;
 		[SerializeField] bool spawning;
 		public bool Spawning 
 		{
@@ -32,15 +31,10 @@ namespace Game.Spawner
 
 		List<T> spawnPool;
 
-		public void SetData(float spawnRadius, System.Action<T> onSpawn)
+		public void SetData(Transform[] spawnPoints, System.Action<T> onSpawn)
 		{
-			this.spawnRadius = spawnRadius;
+			this.spawnPoints = spawnPoints;
 			this.onSpawn = onSpawn;
-		}
-
-		public void SetSpawnCenter(Transform center)
-		{
-			spawnCenter = center;
 		}
 
 		public void Reset()
@@ -65,10 +59,11 @@ namespace Game.Spawner
 			while (spawnPool.Count < minSpawnCount)
 			{
 				T item = Factory.Factory<T>.Instance.GetRandom();
-				var angle = Random.Range(0, 2 * Mathf.PI);
-				var direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
-				item.transform.position = spawnCenter.position + spawnRadius * direction;
-				item.transform.up = -direction;
+
+				var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+				item.transform.position = spawnPoint.position;
+				item.transform.up = spawnPoint.eulerAngles;
+				
 				item.transform.SetParent(transform);
 				spawnPool.Add(item);
 

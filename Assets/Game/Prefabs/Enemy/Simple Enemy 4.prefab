@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 212430661872055998}
   - component: {fileID: 114280632360778218}
   - component: {fileID: 60679742572747206}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Simple Enemy 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5125, y: 0.47142857}
     oldSize: {x: 0.4, y: 0.7}
     newSize: {x: 0.4, y: 0.7}
     adaptiveTilingThreshold: 0.5

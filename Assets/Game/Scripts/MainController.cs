@@ -34,9 +34,9 @@ namespace Game
         List<UI.Screen> screens;
 
         [Header("Scene")]
-        [SerializeField] SceneBuilder sceneBuilder;
-        [Range(5, 50)] [SerializeField] int sceneSize = 10;
+        [SerializeField] View.LevelView[] levels;
 		[SerializeField] float timer = 120;
+        View.LevelView activeLevel;
 
 		bool game = false;
 		Tank controllableTank;
@@ -56,8 +56,6 @@ namespace Game
             endGameScreen.SetData(RestartGame);
             startScreen.SetData(Factory.TankFactory.Instance.GetTypes(), (type) => StartGame(type));
             startScreen.Show();
-
-            sceneBuilder.BuildScene(sceneSize);
         }
 
 		void Update()
@@ -89,18 +87,25 @@ namespace Game
             startScreen.Hide();
             gameScreen.Show();
 
+            //level
+            activeLevel = levels[Random.Range(0, levels.Length)];
+            activeLevel.Show();
+
+            //controllable tank
 			controllableTank = Factory.TankFactory.Instance.GetItem<Tank>(tankType);
-			controllableTank.transform.position = Vector3.zero;
-			controllableTank.transform.eulerAngles = Vector3.zero;
-			controllableTank.SetData(sceneSize);
+            var playerSpawnPoint = activeLevel.PlayerSpawnPoints[Random.Range(0, activeLevel.PlayerSpawnPoints.Length)];
+			controllableTank.transform.position = playerSpawnPoint.position;
+			controllableTank.transform.eulerAngles = playerSpawnPoint.eulerAngles;
+			controllableTank.Init();
 			controllableTank.onDeath += (killing) => EndGame(false);
 
 			Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(controllableTank.transform);
 
             session = new Model.Session();
 
+            //enemies
 			EnemySpawner.Instance.SetData(
-				Camera.main.orthographicSize * 3, 
+				activeLevel.EnemySpawnPoints, 
 				(enemy) => 
 				{
 					enemy.SetData(controllableTank != null ? controllableTank.transform : null);
@@ -114,7 +119,6 @@ namespace Game
 					};
 				});
 			EnemySpawner.Instance.Spawning = true;
-			EnemySpawner.Instance.SetSpawnCenter(controllableTank.transform);
 
             game = true;
         }
@@ -161,7 +165,7 @@ namespace Game
 
 			controllableTank.Move(Input.GetAxis("Vertical"));
             controllableTank.Rotate(Input.GetAxis("Horizontal"));
-			if (Input.GetKeyDown(KeyCode.X))
+			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				controllableTank.Shoot();
 			}
@@ -173,7 +177,7 @@ namespace Game
 			{
                 controllableTank.PreviousWeapon();
 			}
-            if (Input.GetKey(KeyCode.X))
+            if (Input.GetKey(KeyCode.Space))
             {
                 controllableTank.ShootAutomatically();
             }

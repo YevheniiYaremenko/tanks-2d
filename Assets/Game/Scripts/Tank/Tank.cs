@@ -6,7 +6,8 @@ using System.Linq;
 
 namespace Game
 {
-    public abstract class Tank : DamagingObject, IDamaging, IMovable
+	[RequireComponent(typeof(Rigidbody2D))]
+    public abstract class Tank : DamagingObject, IMovable
     {
         [SerializeField] Image weaponBar;
 
@@ -14,8 +15,8 @@ namespace Game
 		[SerializeField] float movementSpeed = 1;
 		[SerializeField] float inverseMoveMult = .5f;
 		[SerializeField] float rotationSpeed = 90;
-        float sceneHalfSize;
-        bool outBounds = false;
+		Rigidbody2D body;
+
 
 		[Header("Weapon")]
 		[SerializeField] Transform[] weaponBases;
@@ -27,6 +28,7 @@ namespace Game
 		{
             base.Awake();
             installedWeapons = new Weapon[weaponBases.Length];
+            body = GetComponent<Rigidbody2D>();
 		}
 
         void Update()
@@ -38,12 +40,10 @@ namespace Game
 			}
 		}
 
-		public void SetData(float sceneSize)
+		public void Init()
 		{
             currentWeaponId = 0;
 			LoadWeapon();
-
-            sceneHalfSize = sceneSize / 2f;
 		}
 
         #region Weapon
@@ -104,26 +104,12 @@ namespace Game
 
 		public void Move(float direction)
 		{
-			var newPosition = transform.position + (transform.up * direction).normalized * movementSpeed * Mathf.Abs(direction) * Time.deltaTime * (direction >= 0 ? 1 : inverseMoveMult);
-            if (outBounds && IsOutOfBounds(newPosition))
-			{
-				return;
-			}
-			outBounds = IsOutOfBounds(newPosition);
-			transform.position = new Vector3(
-                Mathf.Clamp(newPosition.x, -sceneHalfSize, sceneHalfSize),
-                Mathf.Clamp(newPosition.y, -sceneHalfSize, sceneHalfSize)
-			);
-		}
-
-		bool IsOutOfBounds(Vector3 position)
-		{
-			return Mathf.Abs(position.x) > sceneHalfSize || Mathf.Abs(position.y) > sceneHalfSize;
+            body.MovePosition(transform.position + (transform.up * direction).normalized * movementSpeed * Mathf.Abs(direction) * Time.deltaTime * (direction >= 0 ? 1 : inverseMoveMult));
 		}
 
 		public void Rotate(float direction)
 		{
-            transform.Rotate( -Vector3.forward * rotationSpeed * direction * Time.deltaTime);
+			body.MoveRotation(transform.eulerAngles.z - rotationSpeed * direction * Time.deltaTime);
 		}
 
         #endregion
