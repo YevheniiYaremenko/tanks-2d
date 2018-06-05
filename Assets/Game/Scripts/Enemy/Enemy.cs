@@ -14,8 +14,15 @@ namespace Game.AI
 		[SerializeField] float damage = 100;
 		[SerializeField] int killBonus = 10;
 		Transform target;
+        Rigidbody2D body;
 
 		public int KillBonus { get { return killBonus; } }
+
+        protected override void Awake()
+        {
+            base.Awake();
+            body = GetComponent<Rigidbody2D>();
+        }
 
         public void SetData(Transform target)
         {
@@ -34,7 +41,7 @@ namespace Game.AI
 			Rotate(Mathf.Sign(directionAngle) * Mathf.InverseLerp(0, 180, Mathf.Abs(directionAngle)));
 		}
 
-		void OnTriggerEnter2D(Collider2D col)
+		void OnCollisionEnter2D(Collision2D col)
 		{
             if (col.transform == target)
             {
@@ -52,12 +59,12 @@ namespace Game.AI
 
         public void Move(float direction)
         {
-            transform.position += (transform.up * direction).normalized * movementSpeed * Mathf.Abs(direction) * Time.deltaTime;
+            body.MovePosition(transform.position + (transform.up * direction).normalized * movementSpeed * Mathf.Abs(direction) * Time.deltaTime);
         }
 
         public void Rotate(float direction)
         {
-            transform.Rotate(Vector3.forward * rotationSpeed * direction * Time.deltaTime);
+            body.MoveRotation(transform.eulerAngles.z + rotationSpeed * direction * Time.deltaTime);
         }
 
         #endregion

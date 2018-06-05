@@ -21,5 +21,12 @@ namespace Game.View
         {
             gameObject.SetActive(false);
         }
+
+        [ContextMenu("Bake Nav Mesh Map")]
+        [ExecuteInEditMode]
+        public void BakeNavMesh()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
