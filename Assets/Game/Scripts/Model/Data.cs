@@ -8,8 +8,9 @@ namespace Game.Model
 		public int kills = 0;
 	}
 
-    public class Data : MonoBehaviour
-    {
+    [CreateAssetMenu(fileName = "Data", menuName = "Data/Data", order = 0)]
+    public class Data : ScriptableObject
+    {	
         PlayerPrefsInt sessions = new PlayerPrefsInt("Data_Sessions", 0);
 		public int Sessions
 		{

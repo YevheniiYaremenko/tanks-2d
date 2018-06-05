@@ -42,6 +42,8 @@ namespace Game
 		Tank controllableTank;
 		Model.Session session;
 
+        public Model.Data Data { get { return data; } }
+
         void Start()
         {
             screens = new List<UI.Screen>()
