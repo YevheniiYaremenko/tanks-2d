@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.SceneManagement;
 using Game.Spawner;
+using Game.Utils;
 
 namespace Game
 {
@@ -24,7 +25,7 @@ namespace Game
         }
 
 		[Header("Data")]
-		[SerializeField] Model.Data data;
+        [SerializeField] Model.Data data;
 
         [Header("UI")]
         [SerializeField] UI.StartScreen startScreen;
@@ -34,15 +35,14 @@ namespace Game
         List<UI.Screen> screens;
 
         [Header("Scene")]
-        [SerializeField] View.LevelView[] levels;
 		[SerializeField] float timer = 120;
-        View.LevelView activeLevel;
+        View.LevelView level;
 
 		bool game = false;
 		Tank controllableTank;
 		Model.Session session;
 
-        public Model.Data Data { get { return data; } }
+        #region MonoBehaviour
 
         void Start()
         {
@@ -82,48 +82,9 @@ namespace Game
 			}
         }
 
+        #endregion
+
         #region UI
-
-        public void StartGame(System.Type tankType)
-        {
-            startScreen.Hide();
-            gameScreen.Show();
-
-            //level
-            activeLevel = levels[Random.Range(0, levels.Length)];
-            activeLevel.Show();
-
-            //controllable tank
-			controllableTank = Factory.TankFactory.Instance.GetItem<Tank>(tankType);
-            var playerSpawnPoint = activeLevel.PlayerSpawnPoints[Random.Range(0, activeLevel.PlayerSpawnPoints.Length)];
-			controllableTank.transform.position = playerSpawnPoint.position;
-			controllableTank.transform.eulerAngles = playerSpawnPoint.eulerAngles;
-			controllableTank.Init();
-			controllableTank.onDeath += (killing) => EndGame(false);
-
-			Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(controllableTank.transform);
-
-            session = new Model.Session();
-
-            //enemies
-			EnemySpawner.Instance.SetData(
-				activeLevel.EnemySpawnPoints, 
-				(enemy) => 
-				{
-					enemy.SetData(controllableTank != null ? controllableTank.transform : null);
-					enemy.onDeath += (killing) => 
-					{
-						if (killing)
-						{
-                            session.score += enemy.KillBonus;
-                            session.kills++;
-						}
-					};
-				});
-			EnemySpawner.Instance.Spawning = true;
-
-            game = true;
-        }
 
         public void ShowInstructions()
         {
@@ -152,7 +113,45 @@ namespace Game
 
         #region Level
 
-        
+        public void StartGame(System.Type tankType)
+        {
+            startScreen.Hide();
+            gameScreen.Show();
+
+            //level
+            level = FindObjectOfType<View.LevelView>();
+
+            //controllable tank
+            controllableTank = Factory.TankFactory.Instance.GetItem<Tank>(tankType);
+            var playerSpawnPoint = level.PlayerSpawnPoints.Random();
+            controllableTank.transform.position = playerSpawnPoint.position;
+            controllableTank.transform.eulerAngles = playerSpawnPoint.eulerAngles;
+            controllableTank.Init();
+            controllableTank.onDeath += (killing) => EndGame(false);
+
+            Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(controllableTank.transform);
+
+            session = new Model.Session();
+
+            //enemies
+            EnemySpawner.Instance.SetData(
+                level.EnemySpawnPoints,
+                (enemy) =>
+                {
+                    enemy.SetData(controllableTank != null ? controllableTank.transform : null);
+                    enemy.onDeath += (killing) =>
+                    {
+                        if (killing)
+                        {
+                            session.score += enemy.KillBonus;
+                            session.kills++;
+                        }
+                    };
+                });
+            EnemySpawner.Instance.Spawning = true;
+
+            game = true;
+        }
 
         #endregion
 

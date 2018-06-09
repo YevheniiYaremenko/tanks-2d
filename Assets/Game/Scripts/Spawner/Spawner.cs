@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using Game.Utils;
 
 namespace Game.Spawner
 {
@@ -60,7 +61,7 @@ namespace Game.Spawner
 			{
 				T item = Factory.Factory<T>.Instance.GetRandom();
 
-				var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+				var spawnPoint = spawnPoints.Random();
 				item.transform.position = spawnPoint.position;
 				item.transform.up = spawnPoint.eulerAngles;
 				

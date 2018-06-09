@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using Game.Utils;
 
 namespace Game.Factory
 {
@@ -29,12 +30,12 @@ namespace Game.Factory
 		public virtual X GetItem<X>(System.Type type) where X : T
 		{
 			var items = pool.Where(x => x.GetType() == type).Select(x => x as X).ToArray();
-			return items.Count() > 0 ? Instantiate(items[Random.Range(0, items.Length)]) : null;
+			return items.Count() > 0 ? Instantiate(items.Random()) : null;
 		}
 
 		public virtual T GetRandom()
 		{
-            return Instantiate(pool[Random.Range(0, pool.Length)]);
+            return Instantiate(pool.Random());
 		}
     }
 }

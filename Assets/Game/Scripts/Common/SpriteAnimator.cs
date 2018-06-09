@@ -36,7 +36,7 @@ namespace Game.Utils
             isPlaying = true;
             lastFrameTime = Time.time;
 			renderer.enabled = true;
-            currentAnimation = animations[Random.Range(0, animations.Length)];
+            currentAnimation = animations.Random();
 			currentFrame = 0;
             renderer.sprite = currentAnimation.frames[currentFrame];
 		}
