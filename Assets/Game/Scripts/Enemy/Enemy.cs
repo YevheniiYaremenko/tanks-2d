@@ -4,24 +4,23 @@ using UnityEngine;
 
 namespace Game.AI
 {
-    public abstract class Enemy : DamagingObject, IDamaging, IMovable
+    [RequireComponent(typeof(NavMeshAgent2D))]
+    public abstract class Enemy : DamagingObject, IDamaging
     {
-        [Header("Movement")]
-        [SerializeField] float movementSpeed = 1;
-        [SerializeField] float rotationSpeed = 90;
-
         [Header("Enemy")]
 		[SerializeField] float damage = 100;
 		[SerializeField] int killBonus = 10;
 		Transform target;
-        Rigidbody2D body;
+
+        NavMeshAgent2D navigationAgent;
+        Vector2 lastPosition = Vector2.zero;
 
 		public int KillBonus { get { return killBonus; } }
 
         protected override void Awake()
         {
             base.Awake();
-            body = GetComponent<Rigidbody2D>();
+            navigationAgent = GetComponent<NavMeshAgent2D>();
         }
 
         public void SetData(Transform target)
@@ -31,14 +30,13 @@ namespace Game.AI
 
         void Update()
 		{
-			if (target == null)
+			if (target != null)
 			{
-				return;
+                navigationAgent.SetDestination(target.position);
 			}
 
-			var directionAngle = Vector2.SignedAngle(transform.up, ((Vector2)target.position - (Vector2)transform.position).normalized);
-			Move(Mathf.Max(Mathf.InverseLerp(90, 0, Mathf.Abs(directionAngle)), .1f));
-			Rotate(Mathf.Sign(directionAngle) * Mathf.InverseLerp(0, 180, Mathf.Abs(directionAngle)));
+            transform.up = ((Vector2)transform.position - lastPosition).normalized;
+            lastPosition = transform.position;
 		}
 
 		void OnCollisionEnter2D(Collision2D col)
@@ -55,18 +53,11 @@ namespace Game.AI
             }
 		}
 
-        #region IMovable
-
-        public void Move(float direction)
+        public override void Death()
         {
-            body.MovePosition(transform.position + (transform.up * direction).normalized * movementSpeed * Mathf.Abs(direction) * Time.deltaTime);
+            navigationAgent.ResetPath();
+            navigationAgent.enabled = false;
+            base.Death();
         }
-
-        public void Rotate(float direction)
-        {
-            body.MoveRotation(transform.eulerAngles.z + rotationSpeed * direction * Time.deltaTime);
-        }
-
-        #endregion
     }
 }

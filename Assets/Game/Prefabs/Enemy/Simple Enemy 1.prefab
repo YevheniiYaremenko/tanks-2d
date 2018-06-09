@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 4479112662406254}
   - component: {fileID: 212331163016309574}
   - component: {fileID: 114018894651562130}
+  - component: {fileID: 114380395079790274}
   - component: {fileID: 60844979232789334}
   - component: {fileID: 50499912388476338}
   m_Layer: 11
@@ -104,7 +105,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1997762184204284}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
@@ -171,8 +172,6 @@ MonoBehaviour:
   deathSprite: {fileID: 21300006, guid: 62266c3a8b2e441f3b3e5be9693014a5, type: 3}
   ui: {fileID: 1355814664306042}
   healthBar: {fileID: 114145279885189460}
-  movementSpeed: 3
-  rotationSpeed: 100
   damage: 40
   killBonus: 10
 --- !u!114 &114053558284598170
@@ -218,6 +217,26 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114380395079790274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1997762184204284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad705bba33f3642f4bc26cd844e12c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  angularSpeed: 100
+  acceleration: 2
+  stoppingDistance: 0
+  autoBraking: 1
+  radius: 0.2
+  quality: 4
+  priority: 7
+  autoRepath: 1
 --- !u!114 &114398704628043640
 MonoBehaviour:
   m_ObjectHideFlags: 1

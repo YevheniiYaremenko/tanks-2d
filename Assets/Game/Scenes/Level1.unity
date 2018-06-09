@@ -2057,9 +2057,6 @@ MonoBehaviour:
   - {fileID: 1074869614}
   - {fileID: 153936836}
   - {fileID: 2021935784}
-  navMeshView: {fileID: 0}
-  navigationBindingView: {fileID: 120757711745929560, guid: 8f35ede5146264165903bfb5e866b9c8,
-    type: 2}
 --- !u!1 &1041759565
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,14 +3143,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68fbb573f911a4b1580e795b3f15dc50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: e57848e1ca52143d5bae48a05986d368, type: 2}
-  levelData: {fileID: 11400000, guid: 1cf09155f7019438f81db5679643d412, type: 2}
+  data: {fileID: 11400000, guid: 6c0b8ad38538e4c8fb31df9417970b18, type: 2}
   startScreen: {fileID: 1920860510}
   instructionsScreen: {fileID: 1949153712}
   gameScreen: {fileID: 150372931}
   endGameScreen: {fileID: 544586603}
-  levels:
-  - {fileID: 954539202}
   timer: 120
 --- !u!4 &1736122546
 Transform:

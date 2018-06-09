@@ -52,7 +52,7 @@ namespace Game
             }
         }
 
-        public void Death()
+        public virtual void Death()
         {
             if (explosionEffect != null)
             {

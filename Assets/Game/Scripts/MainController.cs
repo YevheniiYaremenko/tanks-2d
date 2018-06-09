@@ -91,19 +91,6 @@ namespace Game
             instructionsScreen.Show();
         }
 
-        public void EndGame(bool win)
-        {
-            Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(null);
-            EnemySpawner.Instance.Spawning = false;
-			EnemySpawner.Instance.Reset();
-            game = false;
-			data.RegisterSession(session);
-
-            screens.ForEach(s => s.Hide());
-            endGameScreen.SetData(win, session.score, session.kills, data.Sessions, data.BestScore, data.MaxKills);
-            endGameScreen.Show();
-        }
-
         public void RestartGame()
         {
             SceneManager.LoadScene("Main");
@@ -151,6 +138,19 @@ namespace Game
             EnemySpawner.Instance.Spawning = true;
 
             game = true;
+        }
+
+        public void EndGame(bool win)
+        {
+            Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(null);
+            EnemySpawner.Instance.Spawning = false;
+            EnemySpawner.Instance.Reset();
+            game = false;
+            data.RegisterSession(session);
+
+            screens.ForEach(s => s.Hide());
+            endGameScreen.SetData(win, session.score, session.kills, data.Sessions, data.BestScore, data.MaxKills);
+            endGameScreen.Show();
         }
 
         #endregion

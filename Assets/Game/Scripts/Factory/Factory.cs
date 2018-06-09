@@ -33,9 +33,16 @@ namespace Game.Factory
 			return items.Count() > 0 ? Instantiate(items.Random()) : null;
 		}
 
-		public virtual T GetRandom()
+		public virtual T GetRandom(Transform spawnPoint = null)
 		{
-            return Instantiate(pool.Random());
+            if (spawnPoint != null)
+			{
+                return Instantiate(pool.Random(), spawnPoint.transform.position, spawnPoint.transform.rotation);
+			}
+			else
+			{
+                return Instantiate(pool.Random());
+			}
 		}
     }
 }

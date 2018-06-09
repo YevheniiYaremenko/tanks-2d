@@ -59,11 +59,7 @@ namespace Game.Spawner
 
 			while (spawnPool.Count < minSpawnCount)
 			{
-				T item = Factory.Factory<T>.Instance.GetRandom();
-
-				var spawnPoint = spawnPoints.Random();
-				item.transform.position = spawnPoint.position;
-				item.transform.up = spawnPoint.eulerAngles;
+				T item = Factory.Factory<T>.Instance.GetRandom(spawnPoints.Random());
 				
 				item.transform.SetParent(transform);
 				spawnPool.Add(item);
