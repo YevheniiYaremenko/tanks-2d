@@ -17,8 +17,12 @@ namespace Game
 		[SerializeField] float rotationSpeed = 90;
 		Rigidbody2D body;
 
+        [Header("Tower")]
+        [SerializeField] Transform tower;
+        [SerializeField] bool canRotateTower = true;
+        [SerializeField] float towerRotationSpeed = 150;
 
-		[Header("Weapon")]
+        [Header("Weapon")]
 		[SerializeField] Transform[] weaponBases;
         [SerializeField] Weapon[] availableWeapons;
 		int currentWeaponId = 0;
@@ -113,5 +117,16 @@ namespace Game
 		}
 
         #endregion
+
+        public void ProcessTowerRotation(Vector2 mousePosition)
+        {
+            if (!canRotateTower)
+            {
+                return;
+            }
+            var targetDirection = transform.InverseTransformPoint(mousePosition).normalized;
+            var targetAngle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg - 90;
+            tower.localEulerAngles = Vector3.forward * Mathf.MoveTowardsAngle(tower.localEulerAngles.z, targetAngle, towerRotationSpeed * Time.deltaTime);
+        }
     }
 }

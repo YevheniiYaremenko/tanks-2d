@@ -166,7 +166,8 @@ namespace Game
 
 			controllableTank.Move(Input.GetAxis("Vertical"));
             controllableTank.Rotate(Input.GetAxis("Horizontal"));
-			if (Input.GetKeyDown(KeyCode.Space))
+            controllableTank.ProcessTowerRotation(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            if (Input.GetMouseButtonDown(0))
 			{
 				controllableTank.Shoot();
 			}
@@ -178,7 +179,7 @@ namespace Game
 			{
                 controllableTank.PreviousWeapon();
 			}
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetMouseButton(0))
             {
                 controllableTank.ShootAutomatically();
             }

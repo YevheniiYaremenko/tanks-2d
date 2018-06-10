@@ -1987,7 +1987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e332199b1c04ec382580214a8f1dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnCount: 10
+  minSpawnCount: 7
   spawnPoints: []
   spawning: 0
 --- !u!4 &925476893
