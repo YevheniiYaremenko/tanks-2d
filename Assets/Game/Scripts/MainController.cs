@@ -93,7 +93,7 @@ namespace Game
 
         public void RestartGame()
         {
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("Level1");
         }
 
         #endregion

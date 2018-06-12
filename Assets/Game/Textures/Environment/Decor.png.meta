@@ -1,0 +1,1158 @@
+fileFormatVersion: 2
+guid: 3134eaf9fda4f9149b1fa8a7b323fda7
+timeCreated: 1528826223
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Decor
+    21300002: barrels_2
+    21300004: bunker_1x1_bottom
+    21300006: bunker_1x1_top
+    21300008: bunker_1x1_top_destroyed
+    21300010: bunker_1x2_bottom
+    21300012: bunker_1x2_top
+    21300014: bunker_1x2_top_destroyed
+    21300016: bunker_2x1_bottom
+    21300018: bunker_2x1_bottom_destroyed
+    21300020: bunker_2x1_top
+    21300022: bunker_2x1_top_destroyed
+    21300024: bunker_round_1x2_bottom
+    21300026: bunker_round_1x2_top
+    21300028: bunker_round_1x2_top_destroyed
+    21300030: bunker_round_2x1_bottom
+    21300032: bunker_round_2x1_top
+    21300034: bunker_round_2x1_top_destroyed
+    21300036: bunker_round_bottom
+    21300038: bunker_round_top_4way
+    21300040: bunker_round_top_4way_destroyed
+    21300042: bunker_round_top_down
+    21300044: bunker_round_top_down_destroyed
+    21300046: bunker_round_top_left
+    21300048: bunker_round_top_left_destroyed
+    21300050: bunker_round_top_right
+    21300052: bunker_round_top_right_destroyed
+    21300054: bunker_round_top_up
+    21300056: bunker_round_top_up_destroyed
+    21300058: bunkers_1x1
+    21300060: bunkers_1x1b
+    21300062: bunkers_1x2
+    21300064: bunkers_2x1
+    21300066: bunkers_2x2-06
+    21300068: bunkers_2x2
+    21300070: bunkers_big
+    21300072: bunkers_big_top
+    21300074: bush_big
+    21300076: crates_2
+    21300078: crates_3
+    21300080: gun_big
+    21300082: gun_big_B
+    21300084: gun_big_dual
+    21300086: gun_medium_dark
+    21300088: gun_medium_dual_dark
+    21300090: gun_medium_dual_green_destroyed
+    21300092: gun_small_brown
+    21300094: gun_small_red
+    21300096: house_1
+    21300098: house_1_destroyed
+    21300100: house_1b
+    21300102: house_1d
+    21300104: house_1e
+    21300106: house_2
+    21300108: house_2b
+    21300110: platform_big
+    21300112: platform_big_b
+    21300114: platform_big_b_destroyed
+    21300116: platform_big_c
+    21300118: platform_big_c_destroyed
+    21300120: platform_big_d
+    21300122: platform_big_d_destroyed
+    21300124: platform_big_destroyed
+    21300126: platform_medium_c
+    21300128: platform_small
+    21300130: rock_7
+    21300132: rock_9
+    21300134: ruin_2
+    21300136: ruin_5
+    21300138: train_01
+    21300140: train_02
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: barrels_2
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 721
+        width: 37
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5405405, y: 0.5263158}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_1x1_bottom
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_1x1_top
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 140
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_1x1_top_destroyed
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 759
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_1x2_bottom
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 661
+        width: 90
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_1x2_top
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 887
+        width: 66
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_1x2_top_destroyed
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 523
+        width: 66
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_2x1_bottom
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 2
+        width: 160
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_2x1_bottom_destroyed
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 327
+        width: 136
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_2x1_top
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 397
+        width: 136
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_2x1_top_destroyed
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 395
+        width: 137
+        height: 68
+      alignment: 9
+      pivot: {x: 0.50364965, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_1x2_bottom
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 793
+        width: 100
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_1x2_top
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 823
+        width: 73
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5068493, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_1x2_top_destroyed
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 823
+        width: 73
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5068493, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_2x1_bottom
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 96
+        width: 230
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_2x1_top
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 242
+        width: 200
+        height: 73
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5068493}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_2x1_top_destroyed
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 541
+        width: 200
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_bottom
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 106
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_top_4way
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 626
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_top_4way_destroyed
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 759
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_top_down
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 393
+        width: 72
+        height: 70
+      alignment: 9
+      pivot: {x: 0.5, y: 0.51428574}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_top_down_destroyed
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 465
+        width: 75
+        height: 74
+      alignment: 9
+      pivot: {x: 0.50666666, y: 0.5135135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_top_left
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 317
+        width: 75
+        height: 74
+      alignment: 9
+      pivot: {x: 0.49333334, y: 0.5135135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_top_left_destroyed
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 320
+        width: 69
+        height: 73
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.49315068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_top_right
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 465
+        width: 74
+        height: 74
+      alignment: 9
+      pivot: {x: 0.5135135, y: 0.5135135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_top_right_destroyed
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 211
+        width: 74
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_top_up
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 453
+        width: 73
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5068493, y: 0.50666666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunker_round_top_up_destroyed
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 617
+        width: 73
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5068493, y: 0.50666666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunkers_1x1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 198
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunkers_1x1b
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 14
+        width: 80
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunkers_1x2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 82
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunkers_2x1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 827
+        width: 192
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunkers_2x2-06
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 588
+        width: 194
+        height: 203
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49753696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunkers_2x2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 392
+        width: 194
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunkers_big
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 196
+        width: 194
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bunkers_big_top
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 694
+        width: 170
+        height: 127
+      alignment: 9
+      pivot: {x: 0.5, y: 0.496063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bush_big
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 280
+        width: 119
+        height: 109
+      alignment: 9
+      pivot: {x: 0.46218488, y: 0.51376146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: crates_2
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 828
+        width: 63
+        height: 57
+      alignment: 9
+      pivot: {x: 0.4920635, y: 0.49122807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: crates_3
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 604
+        width: 40
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.51111114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: gun_big
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 559
+        width: 32
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.627907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: gun_big_B
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 667
+        width: 22
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5, y: 0.74358976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: gun_big_dual
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 621
+        width: 32
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: gun_medium_dark
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 558
+        width: 14
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.52272725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: gun_medium_dual_dark
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 662
+        width: 44
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.52272725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: gun_medium_dual_green_destroyed
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 863
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: gun_small_brown
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 662
+        width: 16
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6333333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: gun_small_red
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 662
+        width: 16
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: house_1
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 911
+        width: 120
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: house_1_destroyed
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 911
+        width: 120
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: house_1b
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 911
+        width: 119
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5042017, y: 0.49107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: house_1d
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 198
+        width: 84
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: house_1e
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 208
+        width: 82
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5121951, y: 0.49367088}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: house_2
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 530
+        width: 123
+        height: 129
+      alignment: 9
+      pivot: {x: 0.50406504, y: 0.503876}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: house_2b
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 391
+        width: 123
+        height: 130
+      alignment: 9
+      pivot: {x: 0.50406504, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: platform_big
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 761
+        width: 57
+        height: 46
+      alignment: 9
+      pivot: {x: 0.49122807, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: platform_big_b
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 857
+        width: 59
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5084746, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: platform_big_b_destroyed
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 705
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: platform_big_c
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 708
+        width: 55
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5090909, y: 0.5102041}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: platform_big_c_destroyed
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 651
+        width: 59
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5084746, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: platform_big_d
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 397
+        width: 55
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5090909, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: platform_big_d_destroyed
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 397
+        width: 59
+        height: 54
+      alignment: 9
+      pivot: {x: 0.5084746, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: platform_big_destroyed
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 809
+        width: 58
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: platform_medium_c
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 208
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: platform_small
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 771
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: rock_7
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 823
+        width: 64
+        height: 62
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48387095}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: rock_9
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 694
+        width: 64
+        height: 63
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4920635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ruin_2
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 289
+        width: 142
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ruin_5
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 465
+        width: 102
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: train_01
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 4
+        width: 67
+        height: 190
+      alignment: 9
+      pivot: {x: 0.5074627, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: train_02
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 4
+        width: 66
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
