@@ -12,8 +12,10 @@ namespace Game
 
       [SerializeField] protected GameObject shootEffect;
       [SerializeField] protected GameObject hitEffect;
+	  [SerializeField] AudioClip shotSound;
 
       protected float lastReloadTime = 0;
+	  AudioSource shootinsSoundSource;
 
       public float ReloadingProgress { get { return Mathf.Clamp01((Time.time - lastReloadTime) / reloadDuration); } }
       public float ReloadingDuration { get { return reloadDuration; } }
@@ -22,6 +24,7 @@ namespace Game
         void Awake()
         {
             lastReloadTime = Time.time;
+            shootinsSoundSource = GetComponent<AudioSource>();
         }
 
         public virtual void Shoot()
@@ -35,6 +38,7 @@ namespace Game
             {
                 Instantiate(shootEffect, startShootPoint.position, startShootPoint.rotation, startShootPoint);
             }
+            shootinsSoundSource.PlayOneShot(shotSound);
         }
     }
 }

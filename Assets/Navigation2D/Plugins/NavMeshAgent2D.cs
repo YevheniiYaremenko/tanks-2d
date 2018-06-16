@@ -185,7 +185,10 @@ public class NavMeshAgent2D : MonoBehaviour
 
     public void ResetPath()
     {
-        agent.ResetPath();
+        if (agent != null)
+        {
+            agent.ResetPath();
+        }
     }
 
     public void SetDestination(Vector2 v)

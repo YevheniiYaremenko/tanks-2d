@@ -58,6 +58,7 @@ namespace Game
             endGameScreen.SetData(RestartGame);
             startScreen.SetData(Factory.TankFactory.Instance.GetTypes(), (type) => StartGame(type));
             startScreen.Show();
+            Sound.MusicManager.Play(Sound.MusicType.Menu);
         }
 
 		void Update()
@@ -104,6 +105,7 @@ namespace Game
         {
             startScreen.Hide();
             gameScreen.Show();
+            Sound.MusicManager.Play(Sound.MusicType.Game);
 
             //level
             level = FindObjectOfType<View.LevelView>();
@@ -151,6 +153,7 @@ namespace Game
             screens.ForEach(s => s.Hide());
             endGameScreen.SetData(win, session.score, session.kills, data.Sessions, data.BestScore, data.MaxKills);
             endGameScreen.Show();
+            Sound.MusicManager.Play(win ? Sound.MusicType.Win : Sound.MusicType.Lose);
         }
 
         #endregion
