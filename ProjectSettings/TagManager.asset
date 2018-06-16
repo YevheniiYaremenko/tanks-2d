@@ -50,6 +50,9 @@ TagManager:
   - name: Tank
     uniqueID: 528954473
     locked: 0
+  - name: Top Decor
+    uniqueID: 2617189987
+    locked: 0
   - name: Particle
     uniqueID: 96692171
     locked: 0
