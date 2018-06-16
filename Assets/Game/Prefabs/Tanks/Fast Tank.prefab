@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564ed1bf8fc484aa2a7dc7a004fd4692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 800
+  maxHealth: 1000
   defence: 0.3
   sprites: []
   explosionEffect: {fileID: 1085730771049548, guid: 13b8b1276236341f4abfecdfd7bbd2d4,
@@ -369,7 +369,7 @@ MonoBehaviour:
   ui: {fileID: 1513606102086728}
   healthBar: {fileID: 114648877092939656}
   weaponBar: {fileID: 114621372176771760}
-  movementSpeed: 3
+  movementSpeed: 5
   inverseMoveMult: 0.7
   rotationSpeed: 130
   tower: {fileID: 4866424938578080}

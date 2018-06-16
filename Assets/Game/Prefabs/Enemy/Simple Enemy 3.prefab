@@ -282,7 +282,7 @@ MonoBehaviour:
   deathSprite: {fileID: 21300018, guid: 62266c3a8b2e441f3b3e5be9693014a5, type: 3}
   ui: {fileID: 1237060473667534}
   healthBar: {fileID: 114368887377488364}
-  damage: 70
+  damage: 80
   killBonus: 20
 --- !u!114 &114747060387626090
 MonoBehaviour:
