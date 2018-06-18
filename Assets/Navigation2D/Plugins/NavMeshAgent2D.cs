@@ -185,7 +185,7 @@ public class NavMeshAgent2D : MonoBehaviour
 
     public void ResetPath()
     {
-        if (agent != null)
+        if (agent != null && agent.enabled)
         {
             agent.ResetPath();
         }
