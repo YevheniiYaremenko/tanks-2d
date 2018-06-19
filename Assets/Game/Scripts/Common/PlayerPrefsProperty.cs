@@ -13,8 +13,8 @@ public abstract class PlayerPrefsProperty2<T, U>
         this.defaultValue = defaultValue;
     }
 
-    public string Name { get { return name; } }
-    protected U DefaultValue { get { return defaultValue; } }
+    public string Name => name;
+    protected U DefaultValue => defaultValue;
 
     abstract public T Value { get; set; }
 

@@ -1,17 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Utils
 {
 	[RequireComponent(typeof(Camera))]
-    public class CameraFollower : MonoBehaviour
+    public class CameraFollower : Singleton<CameraFollower>
     {
 		[SerializeField] Vector4 followArea = new Vector4(0.3f, 0.3f, 0.7f, 0.7f);
 		
 		Transform target;
 
-		public void SetTarget(Transform target)
+        ///<summary>
+        /// Set the following Transform
+		///<param name="target">Transform of the following object</param>
+        ///</summary>
+        public void SetTarget(Transform target)
 		{
 			this.target = target;
 		}
@@ -24,8 +26,7 @@ namespace Game.Utils
 			}
 
 			var targetViewportPosition = Camera.main.WorldToViewportPoint(target.position);
-			if (
-				Mathf.Clamp(targetViewportPosition.x, followArea.x, followArea.z) == targetViewportPosition.x
+			if (Mathf.Clamp(targetViewportPosition.x, followArea.x, followArea.z) == targetViewportPosition.x
 				&& Mathf.Clamp(targetViewportPosition.y, followArea.y, followArea.w) == targetViewportPosition.y)
 			{
 				return;

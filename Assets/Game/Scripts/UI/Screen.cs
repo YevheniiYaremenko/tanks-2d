@@ -1,9 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.UI
 {
+    ///<summary>
+	/// UI screen class
+	///</summary>
     public class Screen : MonoBehaviour
     {
         public void Show()

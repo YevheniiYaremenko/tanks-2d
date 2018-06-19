@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.Sound
@@ -13,21 +12,8 @@ namespace Game.Sound
 	}
 
 	[RequireComponent(typeof(AudioSource))]
-    public class MusicManager : MonoBehaviour
+    public class MusicManager : Singleton<MusicManager>
     {
-		static MusicManager instance;
-		static MusicManager Instance
-		{
-			get
-			{
-				if (instance == null)
-				{
-					instance = FindObjectOfType<MusicManager>();
-				}
-				return instance;
-			}
-		}
-
         [SerializeField] AudioClip menuMusic;
         [SerializeField] AudioClip gameMusic;
         [SerializeField] AudioClip winMusic;

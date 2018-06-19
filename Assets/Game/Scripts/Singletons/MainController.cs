@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
@@ -9,21 +8,8 @@ using Game.Utils;
 
 namespace Game
 {
-    public class MainController : MonoBehaviour
+    public class MainController : Singleton<MainController>
     {
-        static MainController instance;
-        public static MainController Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = FindObjectOfType<MainController>();
-                }
-                return instance;
-            }
-        }
-
 		[Header("Data")]
         [SerializeField] Model.Data data;
 
@@ -46,6 +32,7 @@ namespace Game
 
         void Start()
         {
+            //initialize game UI
             screens = new List<UI.Screen>()
 			{
 				startScreen,
@@ -53,11 +40,12 @@ namespace Game
 				instructionsScreen,
 				endGameScreen
 			};
-
             gameScreen.SetData(ShowInstructions, () => EndGame(false));
             endGameScreen.SetData(RestartGame);
             startScreen.SetData(Factory.TankFactory.Instance.GetTypes(), (type) => StartGame(type));
+
             startScreen.Show();
+
             Sound.MusicManager.Play(Sound.MusicType.Menu);
         }
 
@@ -110,7 +98,7 @@ namespace Game
             //level
             level = FindObjectOfType<View.LevelView>();
 
-            //controllable tank
+            //init player tank
             controllableTank = Factory.TankFactory.Instance.GetItem<Tank>(tankType);
             var playerSpawnPoint = level.PlayerSpawnPoints.Random();
             controllableTank.transform.position = playerSpawnPoint.position;
@@ -118,11 +106,11 @@ namespace Game
             controllableTank.Init();
             controllableTank.onDeath += (killing) => EndGame(false);
 
-            Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(controllableTank.transform);
+            CameraFollower.Instance.SetTarget(controllableTank.transform);
 
             session = new Model.Session();
 
-            //enemies
+            //init enemies
             EnemySpawner.Instance.SetData(
                 level.EnemySpawnPoints,
                 (enemy) =>
@@ -144,7 +132,7 @@ namespace Game
 
         public void EndGame(bool win)
         {
-            Camera.main.GetComponent<Utils.CameraFollower>().SetTarget(null);
+            CameraFollower.Instance.SetTarget(null);
             EnemySpawner.Instance.Spawning = false;
             EnemySpawner.Instance.Reset();
             game = false;

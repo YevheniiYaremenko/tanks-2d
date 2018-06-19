@@ -5,20 +5,11 @@ using Game.Utils;
 
 namespace Game.Spawner
 {
-    public abstract class Spawner<T> : MonoBehaviour where T : MonoBehaviour
+    ///<summary>
+    /// Class for instantiation objects whith some conditions
+    ///</summary>
+    public abstract class Spawner<T> : Singleton<Spawner<T>> where T : MonoBehaviour
     {
-		static Spawner<T> instance;
-		public static Spawner<T> Instance
-		{
-			get
-			{
-				if (instance == null)
-				{
-					instance = FindObjectOfType<Spawner<T>>();
-				}
-				return instance;
-			}
-		}
 		[SerializeField] protected int minSpawnCount = 10;
 		[SerializeField] protected Transform[] spawnPoints;
 		[SerializeField] bool spawning;
@@ -32,13 +23,20 @@ namespace Game.Spawner
 
 		List<T> spawnPool;
 
-		public void SetData(Transform[] spawnPoints, System.Action<T> onSpawn)
+        ///<summary>
+        ///<param name="spawnPoints">Array of available spawn points</param>
+		///<param name="onSpawn">On Spawn callback<param>
+        ///</summary>
+        public void SetData(Transform[] spawnPoints, System.Action<T> onSpawn)
 		{
 			this.spawnPoints = spawnPoints;
 			this.onSpawn = onSpawn;
 		}
 
-		public void Reset()
+        ///<summary>
+        /// Destroy all spawned objects
+        ///</summary>
+        public void Reset()
 		{
 			spawnPool.ForEach(x => Destroy(x.gameObject));
 		}

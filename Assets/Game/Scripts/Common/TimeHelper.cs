@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Utils
 {
     public static class TimeHelper
     {
-		public static string GetTime(int seconds, string format = "{0:00}:{1:00}")
+        ///<summary>
+        /// Convert seconds in formatted string of minutes and seconds
+        ///</summary>
+        public static string GetTime(int seconds, string format = "{0:00}:{1:00}")
 		{
 			int minutes = seconds / 60;
 			seconds -= minutes * 60;
