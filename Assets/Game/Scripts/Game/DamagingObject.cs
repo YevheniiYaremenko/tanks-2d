@@ -14,7 +14,7 @@ namespace Game
 		[SerializeField] Sprite[] sprites;
         [SerializeField] GameObject explosionEffect;
         [SerializeField] Sprite deathSprite;
-        SpriteRenderer renderer;
+        SpriteRenderer spriteRenderer;
 
         [Header("UI")]
 		[SerializeField] GameObject ui;
@@ -23,7 +23,7 @@ namespace Game
 		protected virtual void Awake()
 		{
             Health = maxHealth;
-            renderer = GetComponent<SpriteRenderer>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
 			if (healthBar != null && this is AI.Enemy)
 			{
 				healthBar.transform.parent.localScale = new Vector3( math.sqrt(Health / 100f), 1, 1);
@@ -44,7 +44,7 @@ namespace Game
             }
             else if (sprites.Length > 0)
             {
-                renderer.sprite = sprites[math.min(sprites.Length - 1, (int)((maxHealth - Health) / maxHealth * sprites.Length))];
+                spriteRenderer.sprite = sprites[math.min(sprites.Length - 1, (int)((maxHealth - Health) / maxHealth * sprites.Length))];
             }
 
             if (healthBar != null)
@@ -62,9 +62,9 @@ namespace Game
 
             if (deathSprite != null)
             {
-                renderer.sprite = deathSprite;
+                spriteRenderer.sprite = deathSprite;
             }
-            renderer.sortingOrder = 0;
+            spriteRenderer.sortingOrder = 0;
 
 			if (ui != null)
 			{

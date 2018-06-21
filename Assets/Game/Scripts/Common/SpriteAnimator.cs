@@ -22,22 +22,22 @@ namespace Game.Utils
 		bool isPlaying = false;
 		int currentFrame = 0;
 		float lastFrameTime = 0;
-		SpriteRenderer renderer;
+		SpriteRenderer spriteRenderer;
 		AnimatedSprite currentAnimation;
 
 		void Awake()
 		{
-            renderer = GetComponent<SpriteRenderer>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
 		}
 
 		public void Play()
 		{
             isPlaying = true;
             lastFrameTime = Time.time;
-			renderer.enabled = true;
+			spriteRenderer.enabled = true;
             currentAnimation = animations.Random();
 			currentFrame = 0;
-            renderer.sprite = currentAnimation.frames[currentFrame];
+            spriteRenderer.sprite = currentAnimation.frames[currentFrame];
 		}
 
 		void Update()
@@ -66,7 +66,7 @@ namespace Game.Utils
 				}
 				else
 				{
-					renderer.enabled = false;
+					spriteRenderer.enabled = false;
 				}
 
 				return;
@@ -75,7 +75,7 @@ namespace Game.Utils
 			currentFrame = (currentFrame + (int)(math.max(1, Time.deltaTime * fps))) % currentAnimation.frames.Length;
 			lastFrameTime = Time.time;
 
-			renderer.sprite = currentAnimation.frames[currentFrame];
+			spriteRenderer.sprite = currentAnimation.frames[currentFrame];
 		}
     }
 }
