@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Mathematics;
+using UnityEngine;
 
 namespace Game
 {
@@ -15,7 +16,7 @@ namespace Game
       protected float lastReloadTime = 0;
 	  AudioSource shootinsSoundSource;
 
-      public float ReloadingProgress { get { return Mathf.Clamp01((Time.time - lastReloadTime) / reloadDuration); } }
+      public float ReloadingProgress { get { return math.clamp((Time.time - lastReloadTime) / reloadDuration, 0, 1); } }
       public float ReloadingDuration { get { return reloadDuration; } }
       public virtual bool Automatic { get { return false; } }
 

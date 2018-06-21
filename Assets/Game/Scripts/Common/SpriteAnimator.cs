@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Mathematics;
+using UnityEngine;
 
 namespace Game.Utils
 {
@@ -71,7 +72,7 @@ namespace Game.Utils
 				return;
 			}
 
-			currentFrame = (currentFrame + (int)(Mathf.Max(1, Time.deltaTime * fps))) % currentAnimation.frames.Length;
+			currentFrame = (currentFrame + (int)(math.max(1, Time.deltaTime * fps))) % currentAnimation.frames.Length;
 			lastFrameTime = Time.time;
 
 			renderer.sprite = currentAnimation.frames[currentFrame];

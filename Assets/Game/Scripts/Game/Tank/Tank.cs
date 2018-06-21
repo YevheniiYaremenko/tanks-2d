@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using Unity.Mathematics;
 
 namespace Game
 {
@@ -100,16 +101,13 @@ namespace Game
             }
 		}
 
-		#endregion
+        #endregion
 
-		#region IMovable
+        #region IMovable
 
-		public void Move(float direction)
-		{
-            body.MovePosition(transform.position + (transform.up * direction).normalized * movementSpeed * Mathf.Abs(direction) * Time.deltaTime * (direction >= 0 ? 1 : inverseMoveMult));
-		}
+        public void Move(float direction) => body.MovePosition(transform.position + (transform.up * direction).normalized * movementSpeed * math.abs(direction) * Time.deltaTime * (direction >= 0 ? 1 : inverseMoveMult));
 
-		public void Rotate(float direction)
+        public void Rotate(float direction)
 		{
 			body.MoveRotation(transform.eulerAngles.z - rotationSpeed * direction * Time.deltaTime);
 		}
@@ -123,7 +121,7 @@ namespace Game
                 return;
             }
             var targetDirection = transform.InverseTransformPoint(mousePosition).normalized;
-            var targetAngle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg - 90;
+            var targetAngle = math.degrees(math.atan2(targetDirection.y, targetDirection.x)) - 90;
             tower.localEulerAngles = Vector3.forward * Mathf.MoveTowardsAngle(tower.localEulerAngles.z, targetAngle, towerRotationSpeed * Time.deltaTime);
         }
     }

@@ -15,7 +15,7 @@ namespace Game
             base.Shoot();
 
             int layerMask = 1 << 8 | 1 << 11; //cast only obstacle and enemy layers
-            var hits = Physics2D.RaycastAll(startShootPoint.position, startShootPoint.up, Mathf.Infinity, layerMask)
+            var hits = Physics2D.RaycastAll(startShootPoint.position, startShootPoint.up, 1000, layerMask)
                 .OrderBy(h => h.distance)
                 .ToArray();
 

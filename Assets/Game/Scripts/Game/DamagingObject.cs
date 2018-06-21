@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Mathematics;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Game
@@ -25,7 +26,7 @@ namespace Game
             renderer = GetComponent<SpriteRenderer>();
 			if (healthBar != null && this is AI.Enemy)
 			{
-				healthBar.transform.parent.localScale = new Vector3( Mathf.Sqrt(Health / 100f), 1, 1);
+				healthBar.transform.parent.localScale = new Vector3( math.sqrt(Health / 100f), 1, 1);
 			}
 		}
 
@@ -36,14 +37,14 @@ namespace Game
 
         public void DealDamage(float damage)
         {
-            Health = Mathf.Max(Health - damage * (1 - defence), 0);
+            Health = math.max(Health - damage * (1 - defence), 0);
             if (Health == 0)
             {
                 Death();
             }
             else if (sprites.Length > 0)
             {
-                renderer.sprite = sprites[Mathf.Min(sprites.Length - 1, (int)((maxHealth - Health) / maxHealth * sprites.Length))];
+                renderer.sprite = sprites[math.min(sprites.Length - 1, (int)((maxHealth - Health) / maxHealth * sprites.Length))];
             }
 
             if (healthBar != null)

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Mathematics;
+using UnityEngine;
 
 namespace Game.Model
 {
@@ -32,8 +33,8 @@ namespace Game.Model
 		public void RegisterSession(Session session)
 		{
 			sessions.Value++;
-			bestScore.Value = Mathf.Max(bestScore, session.score);
-			maxkills.Value = Mathf.Max(maxkills, session.kills);
+			bestScore.Value = math.max(bestScore, session.score);
+			maxkills.Value = math.max(maxkills, session.kills);
 		}
     }
 }

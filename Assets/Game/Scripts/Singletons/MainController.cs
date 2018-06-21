@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine.SceneManagement;
 using Game.Spawner;
 using Game.Utils;
+using Unity.Mathematics;
 
 namespace Game
 {
@@ -64,7 +65,7 @@ namespace Game
 			ProcessTankControls();
 			gameScreen.SetData(session.score, session.kills, timer);
 
-            timer = Mathf.Max(0, timer - Time.deltaTime);
+            timer = math.max(0, timer - Time.deltaTime);
 			if (timer == 0)
 			{
 				EndGame(true);

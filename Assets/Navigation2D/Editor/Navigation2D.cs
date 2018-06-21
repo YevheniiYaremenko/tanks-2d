@@ -8,6 +8,7 @@ using UnityEngine.Tilemaps;
 #endif
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Mathematics;
 
 public class Navigation2D : EditorWindow
 {
@@ -263,7 +264,7 @@ public class Navigation2D : EditorWindow
         var cols = GameObject.FindObjectsOfType<Collider2D>();
         if (cols.Length > 0)
         {
-            var min = new Vector2(Mathf.Infinity, Mathf.Infinity);
+            var min = new float2(float.MaxValue, float.MaxValue);
             var max = -min;
             foreach (var c in cols)
             {
