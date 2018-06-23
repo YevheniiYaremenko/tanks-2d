@@ -15,6 +15,8 @@ namespace Game
 		[SerializeField] float inverseMoveMult = .5f;
 		[SerializeField] float rotationSpeed = 90;
 		Rigidbody2D body;
+        float currentMovementDirection = 0;
+        float currentRotationDirection = 0;
 
         [Header("Tower")]
         [SerializeField] Transform tower;
@@ -105,12 +107,21 @@ namespace Game
 
         #region IMovable
 
-        public void Move(float direction) => body.MovePosition(transform.position + (transform.up * direction).normalized * movementSpeed * math.abs(direction) * Time.deltaTime * (direction >= 0 ? 1 : inverseMoveMult));
+        public void Move(float direction) => currentMovementDirection = direction;
 
-        public void Rotate(float direction)
-		{
-			body.MoveRotation(transform.eulerAngles.z - rotationSpeed * direction * Time.deltaTime);
-		}
+        public void Rotate(float direction) => currentRotationDirection = direction;
+
+        ///<summary>
+        /// The reason to use FixedUpdate for tank movement and rotation:
+        /// Rigidbody2D.MovePosition and Rigidbody2D.MoveRotation will only occur
+        /// during the next physics update
+        ///</summary>
+        void FixedUpdate()
+        {
+            body.MovePosition(transform.position + (transform.up * currentMovementDirection).normalized * movementSpeed * math.abs(currentMovementDirection) * Time.deltaTime * (currentMovementDirection >= 0 ? 1 : inverseMoveMult));
+            body.MoveRotation(transform.eulerAngles.z - rotationSpeed * currentRotationDirection * Time.deltaTime);
+        }
+
 
         #endregion
 

@@ -231,8 +231,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 100
-  m_LinearDrag: 100
-  m_AngularDrag: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -424,9 +424,9 @@ MonoBehaviour:
   ui: {fileID: 1659755637830154}
   healthBar: {fileID: 114252070490185070}
   weaponBar: {fileID: 114596163800580508}
-  movementSpeed: 2
+  movementSpeed: 1.4
   inverseMoveMult: 0.6
-  rotationSpeed: 100
+  rotationSpeed: 50
   tower: {fileID: 4415056084533352}
   canRotateTower: 1
   towerRotationSpeed: 60
