@@ -173,6 +173,7 @@ namespace Game
             controllableTank.onDeath += (killing) => EndGame(false);
 
             CameraFollower.Instance.SetTarget(controllableTank.transform);
+            CameraFollower.Instance.Center();
 
             session = new Model.Session();
 
@@ -212,7 +213,7 @@ namespace Game
 
 		void ProcessTankControls()
 		{
-			if (controllableTank == null)
+			if (controllableTank == null || !game)
 			{
 				return;
 			}
