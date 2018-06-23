@@ -9,9 +9,10 @@ namespace Game.UI
         [SerializeField] Text levelInfoText;
         [TextArea] [SerializeField] string levelInfoFormat;
 
-        public void SetData(System.Action onRestart)
+        public void SetData(System.Action onRestart, System.Action onMainMenu)
         {
             this.onRestart = onRestart;
+            this.onMainMenu = onMainMenu;
         }
 
         public void SetData(bool win, int score, int kills, int currentSession, int bestScore, int maxKills)
@@ -30,10 +31,13 @@ namespace Game.UI
         System.Action onRestart;
         public void RestartGame()
         {
-            if (onRestart != null)
-            {
-                onRestart();
-            }
+            onRestart?.Invoke();
+        }
+
+        System.Action onMainMenu;
+        public void MainMenu()
+        {
+            onMainMenu?.Invoke();
         }
     }
 }

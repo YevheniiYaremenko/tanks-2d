@@ -15,46 +15,70 @@ namespace Game
         [SerializeField] Model.Data data;
 
         [Header("UI")]
-        [SerializeField] UI.StartScreen startScreen;
-        [SerializeField] UI.Screen instructionsScreen;
+        [SerializeField] UI.MenuScreen menuScreen;
+        [SerializeField] UI.LevelSelectionScreen levelSelectionScreen;
         [SerializeField] UI.GameScreen gameScreen;
         [SerializeField] UI.EndGameScreen endGameScreen;
+        [SerializeField] UI.Screen instructionsScreen;
+        [SerializeField] UI.Screen loadingScreen;
         List<UI.Screen> screens;
 
-        [Header("Scene")]
+        [Header("Game Properties")]
 		[SerializeField] float timer = 120;
         View.LevelView level;
-
 		bool game = false;
 		Tank controllableTank;
+        System.Type selectedTankType;
 		Model.Session session;
+
+        SceneNavigationManager sceneNavigator;
 
         #region MonoBehaviour
 
+        void Awake()
+        {
+            sceneNavigator = SceneNavigationManager.Instance;
+
+            screens = new List<UI.Screen>()
+            {
+                menuScreen,
+                levelSelectionScreen,
+                gameScreen,
+                endGameScreen,
+                instructionsScreen,
+                loadingScreen
+            };
+
+            gameScreen.SetData(ShowInstructions, () => EndGame(false));
+            endGameScreen.SetData(RestartGame, () => LoadMenu(true));
+            menuScreen.SetData(ExitGame, () => ShowScreen(levelSelectionScreen));
+            levelSelectionScreen.SetData(
+                Factory.TankFactory.Instance.GetTypes(), 
+                sceneNavigator.LevelScenes, 
+                (type, level) => 
+                {
+                    selectedTankType = type;
+                    LoadLevel(level);
+                });
+        }
+
         void Start()
         {
-            //initialize game UI
-            screens = new List<UI.Screen>()
-			{
-				startScreen,
-				gameScreen,
-				instructionsScreen,
-				endGameScreen
-			};
-            gameScreen.SetData(ShowInstructions, () => EndGame(false));
-            endGameScreen.SetData(RestartGame);
-            startScreen.SetData(Factory.TankFactory.Instance.GetTypes(), (type) => StartGame(type));
-
-            startScreen.Show();
-
-            Sound.MusicManager.Play(Sound.MusicType.Menu);
+            LoadMenu(false);
         }
 
 		void Update()
 		{
             if (Input.GetKeyUp(KeyCode.Escape))
             {
-                Application.Quit();
+                if (game)
+                {
+                    EndGame(false);
+                }
+                else
+                {
+                    ExitGame();
+                }
             }
 
             if (!game)
@@ -74,26 +98,67 @@ namespace Game
 
         #endregion
 
+        #region Scene Navigation
+
+        public void LoadMenu(bool showLoadingScreen = true)
+        {
+            if (showLoadingScreen)
+            {
+                loadingScreen.Show();
+            }
+            sceneNavigator.LoadMenu(() => 
+            {
+                ShowScreen(menuScreen);
+                Sound.MusicManager.Play(Sound.MusicType.Menu);
+            });
+        }
+
+        public void LoadLevel(string levelName)
+        {
+            loadingScreen.Show();
+            sceneNavigator.LoadScene(levelName, () =>
+            {
+                ShowScreen(gameScreen);
+                StartGame(selectedTankType);
+            });
+        }
+
+        public void RestartGame()
+        {
+            LoadLevel(sceneNavigator.CurrentScene);
+        }
+
+        void ExitGame()
+        {
+            Application.Quit();
+        }
+
+        #endregion
+
         #region UI
+
+        void ShowScreen(UI.Screen screen)
+        {
+            screens.ForEach(s => s.Hide());
+            screen.Show();
+        }
 
         public void ShowInstructions()
         {
             instructionsScreen.Show();
         }
 
-        public void RestartGame()
+        public void ShowGameScreen()
         {
-            SceneManager.LoadScene("Level1");
+            ShowScreen(gameScreen);
         }
 
         #endregion
 
-        #region Level
+        #region Game
 
         public void StartGame(System.Type tankType)
         {
-            startScreen.Hide();
-            gameScreen.Show();
             Sound.MusicManager.Play(Sound.MusicType.Game);
 
             //level
@@ -139,15 +204,11 @@ namespace Game
             game = false;
             data.RegisterSession(session);
 
-            screens.ForEach(s => s.Hide());
+            
             endGameScreen.SetData(win, session.score, session.kills, data.Sessions, data.BestScore, data.MaxKills);
-            endGameScreen.Show();
+            ShowScreen(endGameScreen);
             Sound.MusicManager.Play(win ? Sound.MusicType.Win : Sound.MusicType.Lose);
         }
-
-        #endregion
-
-		#region Tank
 
 		void ProcessTankControls()
 		{

@@ -19,7 +19,7 @@ namespace Game.UI
         {
             scoreText.text = string.Format("Score: {0}", score);
             killsText.text = string.Format("Kills: {0}", kills);
-            timeText.text = string.Format("Time: {0}", Utils.TimeHelper.GetTime((int)timer));
+            timeText.text = string.Format("Time: {0}", TimeHelper.GetTime((int)timer));
         }
 
         System.Action onShowInstructions;
