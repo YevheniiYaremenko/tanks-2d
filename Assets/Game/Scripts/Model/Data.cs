@@ -13,22 +13,13 @@ namespace Game.Model
     public class Data : ScriptableObject
     {	
         PlayerPrefsInt sessions = new PlayerPrefsInt("Data_Sessions", 0);
-		public int Sessions
-		{
-			get { return sessions; }
-		}
+		public int Sessions => sessions;
 
         PlayerPrefsInt bestScore = new PlayerPrefsInt("Data_BestScore", 0);
-		public int BestScore
-		{
-            get { return bestScore; }
-		}
+		public int BestScore => bestScore;
 
         PlayerPrefsInt maxkills = new PlayerPrefsInt("Data_MaxKills", 0);
-        public int MaxKills
-        {
-            get { return maxkills; }
-        }
+        public int MaxKills => maxkills;
 
 		public void RegisterSession(Session session)
 		{
