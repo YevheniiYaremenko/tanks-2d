@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Game.UI
 {
     public class EndGameScreen : Screen
     {
-        [SerializeField] Text endGameTitle;
-        [SerializeField] Text levelInfoText;
+        [SerializeField] TextMeshProUGUI endGameTitle;
+        [SerializeField] TextMeshProUGUI levelInfoText;
         [TextArea] [SerializeField] string levelInfoFormat;
 
         public void SetData(System.Action onRestart, System.Action onMainMenu)

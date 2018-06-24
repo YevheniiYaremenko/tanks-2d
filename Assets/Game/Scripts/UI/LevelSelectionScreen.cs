@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using TMPro;
 
 namespace Game.UI
 {
@@ -13,15 +14,16 @@ namespace Game.UI
         System.Type selectedTankType;
         string selectedLevel;
 
-        public void SetData(System.Type[] types, string[] levelNames, System.Action<System.Type, string> onGameSelected)
+        public void SetData(System.Type[] types, string[] levelNames, System.Action<System.Type, string> onGameSelected, System.Action onBack)
         {
             this.onGameSelected = onGameSelected;
+            this.onBack = onBack;
 
             //tank types list
             for(int i = 0; i < types.Length; i++)
             {
                 var toggle = Instantiate(tankTypeToggle, tankTypeToggle.transform.parent);
-                toggle.GetComponentInChildren<Text>().text = types[i].ToString().SeparateWords();
+                toggle.GetComponentInChildren<TextMeshProUGUI>().SetText(types[i].ToString().SeparateWords());
 
                 var t = types[i];
                 toggle.onValueChanged.AddListener((isOn) => {if (isOn) selectedTankType = t;});
@@ -38,7 +40,7 @@ namespace Game.UI
             for (int i = 0; i < levelNames.Length; i++)
             {
                 var toggle = Instantiate(levelToggle, levelToggle.transform.parent);
-                toggle.GetComponentInChildren<Text>().text = levelNames[i].SeparateWords(false);
+                toggle.GetComponentInChildren<TextMeshProUGUI>().SetText(levelNames[i].SeparateWords(false));
 
                 var n = levelNames[i];
                 toggle.onValueChanged.AddListener((isOn) => { if (isOn) selectedLevel = n; });
@@ -55,6 +57,12 @@ namespace Game.UI
         public void StartGame()
         {
             onGameSelected?.Invoke(selectedTankType, selectedLevel);
+        }
+
+        System.Action onBack;
+        public void Back()
+        {
+            onBack?.Invoke();
         }
     }
 }

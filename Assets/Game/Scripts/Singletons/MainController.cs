@@ -19,7 +19,7 @@ namespace Game
         [SerializeField] UI.LevelSelectionScreen levelSelectionScreen;
         [SerializeField] UI.GameScreen gameScreen;
         [SerializeField] UI.EndGameScreen endGameScreen;
-        [SerializeField] UI.Screen instructionsScreen;
+        [SerializeField] UI.InstructionsScreen instructionsScreen;
         [SerializeField] UI.Screen loadingScreen;
         List<UI.Screen> screens;
 
@@ -49,9 +49,10 @@ namespace Game
                 loadingScreen
             };
 
-            gameScreen.SetData(ShowInstructions, () => EndGame(false));
+            gameScreen.SetData(() => EndGame(false));
             endGameScreen.SetData(RestartGame, () => LoadMenu(true));
-            menuScreen.SetData(ExitGame, () => ShowScreen(levelSelectionScreen));
+            menuScreen.SetData(ExitGame, () => ShowScreen(instructionsScreen), () => ShowScreen(levelSelectionScreen));
+            instructionsScreen.SetData(ShowMenuScreen);
             levelSelectionScreen.SetData(
                 Factory.TankFactory.Instance.GetTypes(), 
                 sceneNavigator.LevelScenes, 
@@ -59,7 +60,8 @@ namespace Game
                 {
                     selectedTankType = type;
                     LoadLevel(level);
-                });
+                },
+                ShowMenuScreen);
         }
 
         void Start()
@@ -143,14 +145,9 @@ namespace Game
             screen.Show();
         }
 
-        public void ShowInstructions()
+        void ShowMenuScreen()
         {
-            instructionsScreen.Show();
-        }
-
-        public void ShowGameScreen()
-        {
-            ShowScreen(gameScreen);
+            ShowScreen(menuScreen);
         }
 
         #endregion
@@ -199,13 +196,15 @@ namespace Game
 
         public void EndGame(bool win)
         {
+            CameraFollower.Instance.Center();
             CameraFollower.Instance.SetTarget(null);
             EnemySpawner.Instance.Spawning = false;
             EnemySpawner.Instance.Reset();
             game = false;
+            controllableTank.Move(0);
+            controllableTank.Rotate(0);
             data.RegisterSession(session);
 
-            
             endGameScreen.SetData(win, session.score, session.kills, data.Sessions, data.BestScore, data.MaxKills);
             ShowScreen(endGameScreen);
             Sound.MusicManager.Play(win ? Sound.MusicType.Win : Sound.MusicType.Lose);
